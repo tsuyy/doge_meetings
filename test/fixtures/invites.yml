@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  playdate: one
+  status: 1
+
+two:
+  user: two
+  playdate: two
+  status: 1
