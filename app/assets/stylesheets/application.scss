@@ -25,9 +25,6 @@ header{
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  height: 100px;
   width: 100%;
   background-color: #cacaca;
 }
@@ -36,4 +33,8 @@ h1 {
   padding-top: 30px;
   margin-top: 0;
   font-family: 'Barrio', cursive;
+}
+
+.panel.list-group {
+  max-width: 70%;
 }
