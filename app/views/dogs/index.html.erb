@@ -2,7 +2,9 @@
 
 <h1>Dogs</h1>
 
-<% @dogs.each do |dog| %>
+<table>
+  <tbody>
+    <% @dogs.each do |dog| %>
       <tr>
         <td><%= dog.image %></td>
         <td><%= dog.name %></td>
@@ -18,3 +20,9 @@
         <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add My Dog', new_user_dog_path %>
