@@ -69,3 +69,39 @@ apollo = Dog.create({
 	image: "https://68.media.tumblr.com/avatar_0931a62de37a_128.png"
 	temperament: "hangry"
 	})
+koda = Dog.create({
+	name: "Koda",
+	age: 1,
+	sex: "Male"
+	breed: "German Shepherd",
+	vaccinated: true,
+	neutered: true,
+	weight: 25,
+	image: "https://68.media.tumblr.com/avatar_0931a62de37a_128.png"
+	temperament: "destructive"
+	})
+
+koda_pals = Playdate.create({
+	title: "Koda Needs A Friend",
+	location: "Mission Bay Dog Park"
+	date: Date.new(), 
+	description: "My dog is lonely and needs a friend cuz he's bored at home, so he destroys everything."
+	})
+ein_pals = Playdate.create({
+	title: "Ein Adventures",
+	location: "Golden Gate Park"
+	date: Date.new(), 
+	description: "Ein wants a pal to go on a space adventure!"
+	})
+foo_pals = Playdate.create({
+	title: "Looking For A Buddy",
+	location: "Duboce Park"
+	date: Date.new(), 
+	description: "Need a play buddy!"
+	})
+apollo_pals = Playdate.create({
+	title: "Save My Dog From Boredom",
+	location: "Rincon Hill Dog Park"
+	date: Date.new(), 
+	description: "My dog is bored..."
+	})
