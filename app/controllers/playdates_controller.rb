@@ -25,7 +25,7 @@ class PlaydatesController < ApplicationController
   # POST /playdates.json
   def create
     @playdate = Playdate.create(playdate_params)
-    d
+    
   end
 
   # PATCH/PUT /playdates/1
