@@ -56,7 +56,7 @@ ein = Dog.create({
 	vaccinated: true,
 	neutered: true,
 	weight: 18,
-	image: "https://68.media.tumblr.com/avatar_0931a62de37a_128.png",
+	image: "http://vignette1.wikia.nocookie.net/cowboybebop/images/c/cd/6_Ein1.png",
 	temperament: "playful",
 	user_id: regelyn.id
 	})
