@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def home
+  end
+
   # GET /users
   def index
     @users = User.all
@@ -21,7 +24,8 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
+    redirect_to users_path
   end
 
   # PATCH/PUT /users/1
@@ -42,6 +46,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :city, :email, :password_digest)
+      params.require(:user).permit(:name, :city, :email, :password)
     end
 end

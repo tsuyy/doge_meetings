@@ -1,5 +1,29 @@
 <header>
-  <%= link_to users_path do %>
-    <h1 class='text-center'><i class="fa fa-paw" aria-hidden="true"></i> dOGE MEETINGS</h1>
-  <% end %>
+  <div class='site-name'>
+    <%= link_to root_path do %>
+      <h1 class='text-center'><i class="fa fa-paw" aria-hidden="true"></i> dOGE MEETINGS</h1>
+    <% end %>
+  </div>
+
+  <div class='container'>
+    <ul class="navbar-nav list-unstyled">
+      <% if logged_in? %>
+        <li class="dropdown pull-right">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Account
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Log out", logout_path, method: "delete" %>
+            </li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to "Log in", login_path %> | </li>
+        <li><%= link_to "Sign up", new_user_path %></li>
+      <% end %>
+    </ul>
+  </div>
 </header>
