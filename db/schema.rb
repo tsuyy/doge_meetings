@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323005545) do
+ActiveRecord::Schema.define(version: 20170323180048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "playdates", force: :cascade do |t|
+    t.string   "location"
+    t.datetime "date"
+    t.string   "description"
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_playdates_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -24,4 +35,5 @@ ActiveRecord::Schema.define(version: 20170323005545) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "playdates", "users"
 end

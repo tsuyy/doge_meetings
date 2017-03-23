@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-
   root to: 'users#home'
 
-  resources :users
+  resources :users do
+    resources :playdates, shallow: true
+  end
 
   get     '/login',    to: 'sessions#new'
   post    '/login',    to: 'sessions#create'
