@@ -17,3 +17,23 @@
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+ @import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Barrio|Patua+One|Ultra');
+
+header{
+  height: 100px;
+  background-color: #cacaca;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background-color: #cacaca;
+}
+
+h1 {
+  padding-top: 30px;
+  margin-top: 0;
+  font-family: 'Barrio', cursive;
+}
