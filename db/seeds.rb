@@ -36,3 +36,36 @@ regelyn = User.create({
 	city: "San Francisco"
 	})
 
+foo = Dog.create({
+	name: "Foo",
+	age: 2,
+	sex: "Male"
+	breed: "Shiba Inu",
+	vaccinated: true,
+	neutered: true,
+	weight: 20,
+	image: "https://68.media.tumblr.com/avatar_0931a62de37a_128.png"
+	temperament: "confused"
+	})
+ein = Dog.create({
+	name: "Ein",
+	age: 3,
+	sex: "Male"
+	breed: "Corgi",
+	vaccinated: true,
+	neutered: true,
+	weight: 18,
+	image: "https://68.media.tumblr.com/avatar_0931a62de37a_128.png"
+	temperament: "playful"
+	})
+apollo = Dog.create({
+	name: "Apollo",
+	age: 3,
+	sex: "Male"
+	breed: "Labrador",
+	vaccinated: true,
+	neutered: true,
+	weight: 27,
+	image: "https://68.media.tumblr.com/avatar_0931a62de37a_128.png"
+	temperament: "hangry"
+	})
