@@ -10,13 +10,26 @@
     <%= image_tag('https://68.media.tumblr.com/avatar_0931a62de37a_128.png') %>
 
     <p>
-      <i class="fa fa-user-o" aria-hidden="true"></i>
+      <i class="fa fa-user-circle" aria-hidden="true"></i>
       <%= @user.name %><br>
       📍
       <%= @user.city %><br>
       <i class="fa fa-paper-plane" aria-hidden="true"></i>
       <%= @user.email %>
     </p>
+
+    <div class="panel list-group">
+     <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"><%= @user.name %>'s Playdates<span class='pull-right'>🐾</span></li>
+     <div id="sm" class="sublinks collapse">
+      <li class="list-group-item small"> inbox </li>
+      <li class="list-group-item small"> sent </li>
+     </div>
+     <li href="#" class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Invites <span class="glyphicon glyphicon-envelope pull-right"></span></li>
+     <div id="sl" class="sublinks collapse">
+      <a class="list-group-item small"> saved tasks</a>
+      <a class="list-group-item small"> add new task</a>
+     </div>
+    </div>
   </div>
 
   <div class='col-xs-12 col-sm-12 col-md-7'>
