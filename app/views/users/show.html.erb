@@ -1,19 +1,27 @@
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class='row'>
+  <div class='col-xs-12 col-sm-5 col-md-5'>
+    <%= link_to edit_user_path(@user) do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to 'Back', users_path %><br>
+    <%= image_tag('https://68.media.tumblr.com/avatar_0931a62de37a_128.png') %>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
+    <p>
+      <i class="fa fa-user-o" aria-hidden="true"></i>
+      <%= @user.name %><br>
+      📍
+      <%= @user.city %><br>
+      <i class="fa fa-paper-plane" aria-hidden="true"></i>
+      <%= @user.email %>
+    </p>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <div class='col-xs-12 col-sm-12 col-md-7'>
+    <br>
+    <%= image_tag('https://d152j5tfobgaot.cloudfront.net/wp-content/themes/YourStoryWPTheme/images/placeholder.png') %>
+    <%= image_tag('https://d152j5tfobgaot.cloudfront.net/wp-content/themes/YourStoryWPTheme/images/placeholder.png') %>
+  </div>
+</div>
