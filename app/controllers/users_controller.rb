@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def home
+  end
+
   # GET /users
   def index
     @users = User.all
@@ -22,7 +25,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.create(user_params)
-    d
+    redirect_to users_path
   end
 
   # PATCH/PUT /users/1

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'users#home'
+
   resources :users do
     resources :playdates, shallow: true
   end
