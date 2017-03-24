@@ -24,7 +24,9 @@
       <li class="list-group-item"><%= @user.city %><i class="fa fa-location-arrow pull-right" aria-hidden="true"></i></li>
       <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"><%= @user.name %>'s Playdates<span class='pull-right'>🐾</span></li>
       <div id="sm" class="sublinks collapse">
-        <li class="list-group-item"> x </li>
+        <% @user.playdates.each do |playdate| %>
+          <%= content_tag :li, playdate.title, id: "#{playdate.id}", class: ["list-group-item"] %>
+        <% end %>
       </div>
       <li class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Invites <i class="fa fa-envelope pull-right" aria-hidden="true"></i></li>
       <div id="sl" class="sublinks collapse">
@@ -36,4 +38,8 @@
   <div class='col-xs-12 col-sm-12 col-md-7'>
     <%= render 'dogs/show' %>
   </div>
+  <div class='col-xs-12 col-sm-12 col-md-7'>
+    <%= render 'playdates/show' %>
+  </div>
+
 </div>

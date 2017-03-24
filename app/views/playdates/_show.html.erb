@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<% @user.playdates.each do |playdate| %>
+  <%= content_tag :div, class: ["#{playdate.id}"] do %>
+    <p>
+      <strong>Location:</strong>
+      <%= playdate.location %>
+    </p>
+
+    <p>
+      <strong>Date:</strong>
+      <%= playdate.date %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= playdate.description %>
+    </p>
+
+    <p>
+      <strong>Title:</strong>
+      <%= playdate.title %>
+    </p>
+    <%= link_to 'Edit', edit_playdate_path(playdate) %>
+  <% end -%>
+
+<% end %>
+
