@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <% @user.playdates.each do |playdate| %>
-  <%= content_tag :div, class: ["#{playdate.id}"] do %>
+  <%= content_tag :div, class: ["#{playdate.id}", "playdate"] do %>
     <p>
       <strong>Location:</strong>
       <%= playdate.location %>
