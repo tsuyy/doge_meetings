@@ -3,44 +3,35 @@
 
 <div class='row'>
   <div class='col-xs-12 col-sm-5 col-md-5'>
-    <%= link_to edit_user_path(@user) do %>
-      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-    <% end %>
-    <%= link_to 'Back', users_path %><br>
+    <p class='josefin'><%= link_to 'Back', users_path %></p>
     <%if @user.avatar.blank? %>
-      <%= image_tag('https://static-s.aa-cdn.net/img/ios/868001492/56cc30808bcfefdad554d535d1e77b3d') %>
+      <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'polaroid') %>
     <% else %>
-      <%= image_tag @user.avatar.url(:medium) %>
+      <%= image_tag(@user.avatar.url(:medium), class: 'polaroid') %>
     <% end %>
 
-    <p>
-      <i class="fa fa-user-circle" aria-hidden="true"></i>
-      <%= @user.name %><br>
-      📍
-      <%= @user.city %><br>
-      <i class="fa fa-paper-plane" aria-hidden="true"></i>
-      <%= @user.email %>
+    <p class='name'>
+      <%= @user.name %>
     </p>
 
-    <%= link_to "Create Playdate", new_user_playdate_path(@user) %>
+    <p class='josefin'>
+      <%= link_to "Create Playdate", new_user_playdate_path(@user) %>
+    </p>
 
     <div class="panel list-group">
-     <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"><%= @user.name %>'s Playdates<span class='pull-right'>🐾</span></li>
-     <div id="sm" class="sublinks collapse">
-      <li class="list-group-item small"> inbox </li>
-      <li class="list-group-item small"> sent </li>
-     </div>
-     <li href="#" class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Invites <span class="glyphicon glyphicon-envelope pull-right"></span></li>
-     <div id="sl" class="sublinks collapse">
-      <li class="list-group-item small"> saved tasks</li>
-      <li class="list-group-item small"> add new task</li>
-     </div>
+      <li class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu"><%= @user.city %><i class="fa fa-location-arrow pull-right" aria-hidden="true"></i></li>
+      <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"><%= @user.name %>'s Playdates<span class='pull-right'>🐾</span></li>
+      <div id="sm" class="sublinks collapse">
+        <li class="list-group-item"> x </li>
+      </div>
+      <li class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Invites <i class="fa fa-envelope pull-right" aria-hidden="true"></i></li>
+      <div id="sl" class="sublinks collapse">
+       <li class="list-group-item"> x </li>
+      </div>
     </div>
   </div>
 
   <div class='col-xs-12 col-sm-12 col-md-7'>
-    <br>
-    <%= image_tag('https://d152j5tfobgaot.cloudfront.net/wp-content/themes/YourStoryWPTheme/images/placeholder.png') %>
-    <%= image_tag('https://d152j5tfobgaot.cloudfront.net/wp-content/themes/YourStoryWPTheme/images/placeholder.png') %>
+    <%= render 'dogs/show' %>
   </div>
 </div>
