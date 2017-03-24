@@ -1,1 +1,12 @@
-HI
+
+<% @user.dogs.each do |dog| %>
+  <%= link_to 'Edit', edit_dog_path(dog) %>
+  <%= dog.name %>
+  <%= dog.breed %>
+  <%= dog.sex %>
+  <%= dog.age %>
+  <%= dog.vaccinated %>
+  <%= dog.neutered %>
+  <%= dog.weight %>
+  <%= dog.temperament %>
+<% end %>
