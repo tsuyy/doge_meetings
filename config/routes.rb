@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root '/',     to: 'users#home'
+  root          to: 'users#home'
   get  '/dogs', to: 'dogs#index', as: 'dogs'
 
   resources :users do
