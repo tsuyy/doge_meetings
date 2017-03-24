@@ -26,6 +26,7 @@ class DogsController < ApplicationController
 
   def destroy
     @dog.destroy
+    redirect_to user_path(@dog.user)
   end
 
   private
@@ -35,7 +36,7 @@ class DogsController < ApplicationController
   end
   # Never trust parameters from the scary internet, only allow the white list through.
   def dog_params
-    params.require(:dog).permit(:name, :age, :sex, :breed, :vaccinated, :neutered, :weight, :temperament, :image, :user_id)
+    params.require(:dog).permit(:name, :age, :sex, :breed, :vaccinated, :neutered, :weight, :temperament, :avatar, :user_id)
   end
 
 end

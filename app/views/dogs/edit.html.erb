@@ -2,34 +2,44 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-1 col-md-4 col-md-offset-4">
-    <%= form_for :dog, method: :patch, url: {action: 'update'} do |f| %>
+    <%= form_for :dog, method: :patch, url: {action: 'update'}, html: { multipart: true } do |f| %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :Image %>
+    <%= f.file_field :avatar, class: 'form-control' %>
 
-      <%= f.label :breed %>
-      <%= f.text_field :breed, class: 'form-control' %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :age %>
-      <%= f.text_field :age, class: 'form-control' %>
+    <%= f.label :breed %>
+    <%= f.text_field :breed, class: 'form-control' %>
 
-      <%= f.label :sex %>
-      <%= f.text_field :sex, class: 'form-control' %>
+    <%= f.label :age %>
+    <%= f.number_field :age, class: 'form-control' %>
 
-      <%= f.label :vaccinated %>
-      <%= f.text_field :vaccinated, class: 'form-control' %>
+    <%= f.label :sex %><br>
+    <%= f.radio_button :sex, "Male", class: 'text-center' %> <label> Male </label>
+    <%= f.radio_button :sex, "Female" %> <label> Female </label><br>
 
-      <%= f.label :neutered %>
-      <%= f.text_field :neutered, class: 'form-control' %>
+    <%= f.label :vaccinated %><br>
+    <%= f.radio_button :vaccinated, "true" %> <label> Yes </label>
+    <%= f.radio_button :vaccinated, "false" %> <label> No </label><br>
 
-      <%= f.label :weight %>
-      <%= f.text_field :weight, class: 'form-control' %>
 
-      <%= f.label :temperament %>
-      <%= f.text_field :temperament, class: 'form-control' %><br>
+    <%= f.label :neutered %><br>
+    <%= f.radio_button :neutered, "true" %> <label> Yes </label>
+    <%= f.radio_button :neutered, "false" %> <label> No </label><br>
 
-      <%= f.submit "Submit", class: "btn btn-default" %>
+    <%= f.label :weight %> ( lb )
+    <%= f.number_field :weight, class: 'form-control' %>
+
+    <%= f.label :temperament %>
+    <%= f.text_field :temperament, class: 'form-control' %><br>
+
+    <%= f.submit "Submit", class: "btn btn-default" %>
     <% end %>
+
+    <%= link_to 'Delete', @dog, method: :delete, data: { confirm: 'Are you sure?' } %>
+
 
   </div>
 </div>
