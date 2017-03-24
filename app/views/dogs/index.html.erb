@@ -1,13 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Dogs</h1>
-
+<h2 class='text-center'>Dogs</h2>
+<div class='row'>
     <% @dogs.each do |dog| %>
-    <%= image_tag(dog.image, class: 'polaroid') %>
+    <div class='col-xs-12 col-sm-6 col-md-4'>
+      <%if dog.avatar.blank? %>
+        <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'polaroid') %>
+      <% else %>
+        <%= image_tag(dog.avatar.url(:medium), class: 'polaroid') %>
+      <% end %>
       <p class='name'><%= dog.name %></p>
+    </div>
     <% end %>
 
 
-<br>
-
-<%= link_to 'Add My Dog', new_user_dog_path %>
+</div>
