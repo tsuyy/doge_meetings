@@ -44,7 +44,6 @@ foo = Dog.create({
 	vaccinated: true,
 	neutered: true,
 	weight: 20,
-	image: "https://68.media.tumblr.com/avatar_0931a62de37a_128.png",
 	temperament: "confused",
 	user_id: doge.id
 	})
@@ -56,7 +55,6 @@ ein = Dog.create({
 	vaccinated: true,
 	neutered: true,
 	weight: 18,
-	image: "http://vignette1.wikia.nocookie.net/cowboybebop/images/c/cd/6_Ein1.png",
 	temperament: "playful",
 	user_id: regelyn.id
 	})
@@ -68,7 +66,6 @@ apollo = Dog.create({
 	vaccinated: true,
 	neutered: true,
 	weight: 27,
-	image: "https://68.media.tumblr.com/avatar_0931a62de37a_128.png",
 	temperament: "hangry",
 	user_id: kody.id
 	})
@@ -80,7 +77,6 @@ koda = Dog.create({
 	vaccinated: true,
 	neutered: true,
 	weight: 25,
-	image: "https://68.media.tumblr.com/avatar_0931a62de37a_128.png",
 	temperament: "destructive",
 	user_id: yvonne.id
 	})
@@ -88,28 +84,28 @@ koda = Dog.create({
 koda_pals = Playdate.create({
 	title: "Koda Needs A Friend",
 	location: "Mission Bay Dog Park",
-	date: Date.new(), 
+	date: Date.new(),
 	description: "My dog is lonely and needs a friend cuz he's bored at home, so he destroys everything.",
 	user_id: yvonne.id
 	})
 ein_pals = Playdate.create({
 	title: "Ein Adventures",
 	location: "Golden Gate Park",
-	date: Date.new(), 
+	date: Date.new(),
 	description: "Ein wants a pal to go on a space adventure!",
 	user_id: regelyn.id
 	})
 foo_pals = Playdate.create({
 	title: "Looking For A Buddy",
 	location: "Duboce Park",
-	date: Date.new(), 
+	date: Date.new(),
 	description: "Need a play buddy!",
 	user_id: doge.id
 	})
 apollo_pals = Playdate.create({
 	title: "Save My Dog From Boredom",
 	location: "Rincon Hill Dog Park",
-	date: Date.new(), 
+	date: Date.new(),
 	description: "My dog is bored...",
 	user_id: kody.id
 	})
