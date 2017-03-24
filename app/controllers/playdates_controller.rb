@@ -2,19 +2,17 @@ class PlaydatesController < ApplicationController
   before_action :set_playdate, only: [:show, :edit, :update, :destroy]
 
   # GET /playdates
-  # GET /playdates.json
   def index
     @playdates = Playdate.all
   end
 
   # GET /playdates/1
-  # GET /playdates/1.json
   def show
   end
 
   # GET /playdates/new
   def new
-    @playdate = Playdate.new
+    @playdate = Playdate.new(user_id: params[:user_id])
   end
 
   # GET /playdates/1/edit
@@ -22,20 +20,20 @@ class PlaydatesController < ApplicationController
   end
 
   # POST /playdates
-  # POST /playdates.json
   def create
-    @playdate = Playdate.create(playdate_params)
-    
+    pa = playdate_params
+    pa[:user_id] = params[:user_id]
+    @playdate = Playdate.create(pa)
+    redirect_to user_playdates_path(@playdate.user)
+
   end
 
   # PATCH/PUT /playdates/1
-  # PATCH/PUT /playdates/1.json
   def update
     @playdate.update(playdate_params)
   end
 
   # DELETE /playdates/1
-  # DELETE /playdates/1.json
   def destroy
     @playdate.destroy
   end
