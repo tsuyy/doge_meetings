@@ -10,20 +10,37 @@
     <div class="modal fade dogModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
       <div class="modal-dialog modal-sm">
         <div class= "modal-content">
+
           <%if dog.avatar.blank? %>
-            <%= image_tag('https://i.imgflip.com/4l3w9.jpg') %>
+            <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal') %>
           <% else %>
             <%= image_tag(dog.avatar.url(:medium)) %>
           <% end %>
-          Name: <%= dog.name %><br>
-          Breed: <%= dog.breed %><br>
-          <%= dog.sex %><br>
-          Age: <%= dog.age %><br>
-          <%= dog.vaccinated %><br>
-          <%= dog.neutered %><br>
-          Weight: <%= dog.weight %><br>
-          Temperament: <%= dog.temperament %><br>
-          <%= link_to 'Edit', edit_dog_path(dog) %><br>
+          <%= link_to edit_dog_path(dog) do %>
+            <i class="fa fa-pencil-square-o pull-right" aria-hidden="true"></i>
+          <% end %>
+
+          <p class='josefin'>
+            Name: <%= dog.name %><br>
+            Breed: <%= dog.breed %><br>
+            <%= dog.sex %><br>
+            Age: <%= dog.age %><br>
+            Vaccinated:
+            <% if dog.vaccinated == true %>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            <% else %>
+              <i class="fa fa-times" aria-hidden="true"></i>
+            <% end %><br>
+            Neutered:
+            <% if dog.neutered == true %>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            <% else %>
+              <i class="fa fa-times" aria-hidden="true"></i>
+            <% end %><br>
+            Weight: <%= dog.weight %> lb <br>
+            Temperament: <%= dog.temperament %><br>
+          </p>
+
         </div>
       </div>
     </div>
