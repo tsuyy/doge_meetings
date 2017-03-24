@@ -1,5 +1,10 @@
 
 <% @user.dogs.each do |dog| %>
+  <%if dog.avatar.blank? %>
+    <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'polaroid') %>
+  <% else %>
+    <%= image_tag(dog.avatar.url(:medium), class: 'polaroid') %>
+  <% end %>
   <%= link_to 'Edit', edit_dog_path(dog) %>
   <%= dog.name %>
   <%= dog.breed %>
