@@ -1,17 +1,31 @@
-
-<% @user.dogs.each do |dog| %>
-  <%if dog.avatar.blank? %>
-    <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'polaroid') %>
-  <% else %>
-    <%= image_tag(dog.avatar.url(:medium), class: 'polaroid') %>
+<div class='row'>
+  <% @user.dogs.each do |dog| %>
+    <div class='dog-modal' data-toggle="modal" data-target=".dogModal">
+      <%if dog.avatar.blank? %>
+        <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'polaroid') %>
+      <% else %>
+        <%= image_tag(dog.avatar.url(:medium), class: 'polaroid') %>
+      <% end %>
+    </div>
+    <div class="modal fade dogModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm">
+        <div class= "modal-content">
+          <%if dog.avatar.blank? %>
+            <%= image_tag('https://i.imgflip.com/4l3w9.jpg') %>
+          <% else %>
+            <%= image_tag(dog.avatar.url(:medium)) %>
+          <% end %>
+          Name: <%= dog.name %><br>
+          Breed: <%= dog.breed %><br>
+          <%= dog.sex %><br>
+          Age: <%= dog.age %><br>
+          <%= dog.vaccinated %><br>
+          <%= dog.neutered %><br>
+          Weight: <%= dog.weight %><br>
+          Temperament: <%= dog.temperament %><br>
+          <%= link_to 'Edit', edit_dog_path(dog) %><br>
+        </div>
+      </div>
+    </div>
   <% end %>
-  <%= link_to 'Edit', edit_dog_path(dog) %>
-  <%= dog.name %>
-  <%= dog.breed %>
-  <%= dog.sex %>
-  <%= dog.age %>
-  <%= dog.vaccinated %>
-  <%= dog.neutered %>
-  <%= dog.weight %>
-  <%= dog.temperament %>
-<% end %>
+</div>
