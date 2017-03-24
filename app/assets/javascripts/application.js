@@ -16,10 +16,10 @@
 //= require bootstrap
 //= require_tree .
 
-$(document).ready(function() {
-  $('.collapse').collapse();
+$(document).on('turbolinks:load', function() {
   $('.sublinks li').on('click', function(){
     var id = this.id;
-    $(`.${id}`).toggle();
+      $('.playdate').hide()
+      $(`.${id}`).toggle(500);
   })
 })
