@@ -16,6 +16,6 @@
 //= require bootstrap
 //= require_tree .
 
-// $(document).ready(function() {
-//   $('.collapse').collapse();
-// })
+$(document).ready(function() {
+  $('.collapse').collapse();
+})
