@@ -17,11 +17,20 @@
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
- @import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Barrio|Patua+One|Ultra');
+ @import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Barrio|Josefin+Sans');
+
+body {
+  background-image: url(bg.png);
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 19px;
+
+}
 
 header{
   height: 100px;
-  background-color: #cacaca;
 }
 
 footer {
@@ -30,11 +39,62 @@ footer {
 }
 
 h1 {
-  padding-top: 30px;
+  padding-top: 20px;
   margin-top: 0;
   font-family: 'Barrio', cursive;
+  font-size: 65px;
+  margin-left: 50px;
+}
+
+ul.pull-right {
+  margin-top: 34px;
+  font-size: 46px;
+  margin-right: -30px;
+}
+
+.collapsed:hover {
+  background-color: #75efde;
+}
+
+p.name {
+  max-width: 350px;
+  text-align: center;
+  margin-top: -50px;
+  margin-bottom: 35px;
+  font-size: 35px;
+  line-height: 35px;
+  font-family: 'Amatic SC', cursive;
+}
+
+p.josefin {
+  max-width: 350px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 40px;
+}
+
+div.before-sign-in, .btn, .dropdown-menu {
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+
 }
 
 .panel.list-group {
-  max-width: 70%;
+  max-width: 350px;
+  min-width: 350px;
+  box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.polaroid {
+  box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
+  padding: 20px 18px 75px 18px;
+  background: white;
+  max-width: 350px;
+}
+
+.form-control {
+  font-size: 18px;
 }

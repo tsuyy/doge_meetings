@@ -21,16 +21,16 @@ pre {
 }
 
 a {
-  color: #000;
-  text-decoration: none;
+  color: #000!important;
+  text-decoration: none!important;
 
   &:visited {
     color: #666;
   }
 
   &:hover {
-    color: #000;
-    text-decoration: none;
+    color: #514e4e!important;
+    text-decoration: none!important;
   }
 }
 
