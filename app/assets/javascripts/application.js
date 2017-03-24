@@ -18,7 +18,6 @@
 
 $(document).ready(function() {
   $('.collapse').collapse();
-  console.log("hello")
   $('.sublinks li').on('click', function(){
     var id = this.id;
     $(`.${id}`).toggle();
