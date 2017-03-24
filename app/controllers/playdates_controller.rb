@@ -21,9 +21,9 @@ class PlaydatesController < ApplicationController
 
   # POST /playdates
   def create
-    pa = playdate_params
-    pa[:user_id] = params[:user_id]
-    @playdate = Playdate.create(pa)
+    playdate = playdate_params
+    playdate[:user_id] = params[:user_id]
+    @playdate = Playdate.create(playdate)
     redirect_to user_playdates_path(@playdate.user)
 
   end
