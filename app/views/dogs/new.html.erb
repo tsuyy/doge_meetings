@@ -2,7 +2,8 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-1 col-md-4 col-md-offset-4">
-    <%= form_for [@dog.user, @dog] do |f| %>
+    <%= form_for [@dog.user, @dog], html: { multipart: true } do |f| %>
+      <%= f.file_field :avatar, class: 'form-control' %>
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -11,19 +12,23 @@
       <%= f.text_field :breed, class: 'form-control' %>
 
       <%= f.label :age %>
-      <%= f.text_field :age, class: 'form-control' %>
+      <%= f.number_field :age, class: 'form-control' %>
 
-      <%= f.label :sex %>
-      <%= f.text_field :sex, class: 'form-control' %>
+      <%= f.label :sex %><br>
+      <%= f.radio_button :sex, "Male", class: 'text-center' %> <label> Male </label>
+      <%= f.radio_button :sex, "Female" %> <label> Female </label><br>
 
-      <%= f.label :vaccinated %>
-      <%= f.text_field :vaccinated, class: 'form-control' %>
+      <%= f.label :vaccinated %><br>
+      <%= f.radio_button :vaccinated, "true" %> <label> Yes </label>
+      <%= f.radio_button :vaccinated, "false" %> <label> No </label><br>
 
-      <%= f.label :neutered %>
-      <%= f.text_field :neutered, class: 'form-control' %>
 
-      <%= f.label :weight %>
-      <%= f.text_field :weight, class: 'form-control' %>
+      <%= f.label :neutered %><br>
+      <%= f.radio_button :neutered, "true" %> <label> Yes </label>
+      <%= f.radio_button :neutered, "false" %> <label> No </label><br>
+
+      <%= f.label :weight %> ( lb )
+      <%= f.number_field :weight, class: 'form-control' %>
 
       <%= f.label :temperament %>
       <%= f.text_field :temperament, class: 'form-control' %><br>
