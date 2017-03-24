@@ -7,7 +7,11 @@
       <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
     <% end %>
     <%= link_to 'Back', users_path %><br>
-    <%= image_tag('https://static-s.aa-cdn.net/img/ios/868001492/56cc30808bcfefdad554d535d1e77b3d') %>
+    <%if @user.avatar.blank? %>
+      <%= image_tag('https://static-s.aa-cdn.net/img/ios/868001492/56cc30808bcfefdad554d535d1e77b3d') %>
+    <% else %>
+      <%= image_tag @user.avatar.url(:medium) %>
+    <% end %>
 
     <p>
       <i class="fa fa-user-circle" aria-hidden="true"></i>
