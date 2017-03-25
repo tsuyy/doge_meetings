@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
   before_action :set_dog,         only: [:edit, :destroy, :update]
-  before_action :is_current_user, only: [:edit, :destroy, :update]
+  before_action :is_current_user, only: [:edit, :destroy, :update, :new, :create]
 
   def index
     @dogs = Dog.all
