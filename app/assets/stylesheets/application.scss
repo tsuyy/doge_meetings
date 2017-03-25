@@ -29,15 +29,6 @@ body {
 
 }
 
-header{
-  height: 100px;
-}
-
-footer {
-  width: 100%;
-  background-color: #cacaca;
-}
-
 h1 {
   padding-top: 20px;
   margin-top: 0;
@@ -51,8 +42,8 @@ ul.pull-left {
   margin-top: 10px;
 }
 
-.collapsed:hover {
-  background-color: #75efde;
+.collapsed:hover, .btn-default:hover {
+  background-color: #75efde!important;
 }
 
 p.name {
