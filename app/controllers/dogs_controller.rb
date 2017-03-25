@@ -17,6 +17,10 @@ class DogsController < ApplicationController
   end
 
   def edit
+    @dog = Dog.find_by_id(params[:id])
+    if !current_user || current_user != @dog.user
+      redirect_to root_path
+    end
   end
 
   def update
@@ -25,6 +29,10 @@ class DogsController < ApplicationController
   end
 
   def destroy
+    @dog = Dog.find_by_id(params[:id])
+    if !current_user || current_user != @dog.user
+      redirect_to root_path
+    end
     @dog.destroy
     redirect_to user_path(@dog.user)
   end
