@@ -14,13 +14,13 @@
     </p>
 
     <p class='josefin'>
-      <%= link_to "Add Dog", new_user_dog_path(@user) %><br>
-      <%= link_to "Create Playdate", new_user_playdate_path(@user) %>
+      📍 <%= @user.city %><br>
+      <%= link_to "Add Dog", new_user_dog_path(@user), class: 'btn btn-default' %>
+      <%= link_to "Create Playdate", new_user_playdate_path(@user), class: 'btn btn-default' %>
 
     </p>
 
     <div class="panel list-group">
-      <li class="list-group-item"><%= @user.city %><i class="fa fa-location-arrow pull-right" aria-hidden="true"></i></li>
       <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"><%= @user.name %>'s Playdates<span class='pull-right'>🐾</span></li>
       <div id="sm" class="sublinks collapse playdates">
         <% @user.playdates.each do |playdate| %>
@@ -30,7 +30,6 @@
       <li class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Invites <i class="fa fa-envelope pull-right" aria-hidden="true"></i></li>
       <div id="sl" class="sublinks collapse invites">
        <% @user.invites.each do |invite|%>
-        <li class = "list-group-item" data-toggle="modal" data-target="#exampleModal"></li>
         <%= content_tag :li, "Invite From: " + invite.playdate.user.name, id: "#{invite.id}", class: ["list-group-item"], data: { target: "modal" } %>
        <% end %>
       </div>
