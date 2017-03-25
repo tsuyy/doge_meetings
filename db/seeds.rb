@@ -111,22 +111,22 @@ apollo_pals = Playdate.create({
 	})
 
 ein_foo = Invite.create ({
-	user_id: regelyn.id,
+	user_id: kody.id,
 	playdate_id: ein_pals.id,
 	status: 1
 	})
 apollo_koda = Invite.create ({
-	user_id: kody.id,
+	user_id: regelyn.id,
 	playdate_id: apollo_pals.id,
 	status: 1
 	})
 koda_foo = Invite.create ({
-	user_id: yvonne.id,
+	user_id: doge.id,
 	playdate_id: koda_pals.id,
 	status: 1
 	})
 foo_apollo = Invite.create ({
-	user_id: doge.id,
+	user_id: yvonne.id,
 	playdate_id: foo_pals.id,
 	status: 1
 	})
