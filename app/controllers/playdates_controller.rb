@@ -24,7 +24,7 @@ class PlaydatesController < ApplicationController
     playdate = playdate_params
     playdate[:user_id] = params[:user_id]
     @playdate = Playdate.create(playdate)
-    redirect_to user_playdates_path(@playdate.user)
+    redirect_to user_path(@playdate.user)
 
   end
 
