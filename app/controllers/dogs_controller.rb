@@ -1,5 +1,6 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:edit, :update, :destroy]
+  before_action :set_dog,         only: [:edit, :destroy, :update]
+  before_action :is_current_user, only: [:edit, :destroy]
 
   def index
     @dogs = Dog.all
@@ -17,10 +18,6 @@ class DogsController < ApplicationController
   end
 
   def edit
-    @dog = Dog.find_by_id(params[:id])
-    if !current_user || current_user != @dog.user
-      redirect_to root_path
-    end
   end
 
   def update
@@ -29,15 +26,17 @@ class DogsController < ApplicationController
   end
 
   def destroy
-    @dog = Dog.find_by_id(params[:id])
-    if !current_user || current_user != @dog.user
-      redirect_to root_path
-    end
     @dog.destroy
     redirect_to user_path(@dog.user)
   end
 
   private
+  def is_current_user
+    @dog = Dog.find_by_id(params[:id])
+    if !current_user || current_user != @dog.user
+      redirect_to root_path
+    end
+  end
 
   def set_dog
     @dog = Dog.find(params[:id])
