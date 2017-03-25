@@ -42,8 +42,8 @@ ul.pull-left {
   margin-top: 10px;
 }
 
-.collapsed:hover {
-  background-color: #75efde;
+.collapsed:hover, .btn-default:hover {
+  background-color: #75efde!important;
 }
 
 p.name {
