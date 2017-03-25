@@ -46,10 +46,9 @@ h1 {
   margin-left: 50px;
 }
 
-ul.pull-right {
-  margin-top: 34px;
-  font-size: 46px;
-  margin-right: -30px;
+ul.pull-left {
+  font-size: 50px;
+  margin-top: 10px;
 }
 
 .collapsed:hover {
@@ -77,6 +76,7 @@ p.josefin {
 div.before-sign-in, .btn, .dropdown-menu {
   font-size: 18px;
   font-family: 'Josefin Sans', sans-serif;
+  margin-top: 10px;
 
 }
 

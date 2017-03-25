@@ -3,7 +3,6 @@
 
 <div class='row'>
   <div class='col-xs-12 col-sm-5 col-md-5'>
-    <p class='josefin'><%= link_to 'Back', users_path %></p>
     <%if @user.avatar.blank? %>
       <%= image_tag('http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png', class: 'polaroid') %>
     <% else %>
