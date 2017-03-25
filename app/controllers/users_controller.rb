@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     @user = User.find_by_id(params[:id])
-    if @user != current_user
+    if !logged_in?
       redirect_to root_path
     end
   end
