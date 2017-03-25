@@ -11,6 +11,10 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @user = User.find_by_id(params[:id])
+    if @user != current_user
+      redirect_to root_path
+    end
   end
 
   # GET /users/new
@@ -20,6 +24,10 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find_by_id(params[:id])
+    if @user != current_user
+      redirect_to root_path
+    end
   end
 
   # POST /users
@@ -30,11 +38,17 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
+    @user = User.find_by_id(params[:id])
     @user.update(user_params)
+    redirect_to user_path(@user)
   end
 
   # DELETE /users/1
   def destroy
+    @user = User.find_by_id(params[:id])
+    if @user != current_user
+      redirect_to root_path
+    end
     @user.destroy
   end
 
