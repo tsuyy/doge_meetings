@@ -1,15 +1,50 @@
 <h2 class='text-center'>Dogs</h2>
+
 <div class='row'>
-    <% @dogs.each do |dog| %>
+  <% @dogs.each do |dog| %>
+  <div class='dog-modal' data-toggle="modal" data-target=".dogModal">
     <div class='col-xs-12 col-sm-6 col-md-4'>
       <%if dog.avatar.blank? %>
-        <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'polaroid') %>
+        <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'img-responsive polaroid') %>
       <% else %>
-        <%= image_tag(dog.avatar.url(:medium), class: 'polaroid') %>
+        <%= image_tag(dog.avatar.url(:medium), class: 'img-responsive polaroid') %>
       <% end %>
       <p class='name'><%= dog.name %></p>
     </div>
-    <% end %>
+  </div>
 
+  <div class="modal fade dogModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm">
+      <div class= "modal-content">
+        <%if dog.avatar.blank? %>
+          <%= link_to image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal'), user_path(dog.user) %>
+        <% else %>
+          <%= image_tag(dog.avatar.url(:medium)) %>
+        <% end %>
 
+        <p class='josefin'>
+          Name: <%= dog.name %><br>
+          Breed: <%= dog.breed %><br>
+          <%= dog.sex %><br>
+          Age: <%= dog.age %><br>
+          Vaccinated:
+          <% if dog.vaccinated == true %>
+            <i class="fa fa-check" aria-hidden="true"></i>
+          <% else %>
+            <i class="fa fa-times" aria-hidden="true"></i>
+          <% end %><br>
+          Neutered:
+          <% if dog.neutered == true %>
+            <i class="fa fa-check" aria-hidden="true"></i>
+          <% else %>
+            <i class="fa fa-times" aria-hidden="true"></i>
+          <% end %><br>
+          Weight: <%= dog.weight %> lb <br>
+          Temperament: <%= dog.temperament %><br>
+        </p>
+
+      </div>
+    </div>
+  </div>
+  <% end %>
 </div>

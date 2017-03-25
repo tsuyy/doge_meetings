@@ -38,7 +38,7 @@
     <%= f.submit "OK", class: "btn btn-default" %>
     <% end %><br>
 
-    <%= link_to 'Back', user_path %> |
+    <%= link_to 'Back', user_path(@dog.user) %> |
     <%= link_to 'Delete', @dog, method: :delete %>
 
 
