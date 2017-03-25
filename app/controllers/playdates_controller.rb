@@ -31,6 +31,7 @@ class PlaydatesController < ApplicationController
   # PATCH/PUT /playdates/1
   def update
     @playdate.update(playdate_params)
+    redirect_to user_path(@playdate.user)
   end
 
   # DELETE /playdates/1
