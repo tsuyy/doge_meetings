@@ -17,7 +17,12 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-  $('.sublinks li').on('click', function(){
+  $('.sublinks.playdates li').on('click', function(){
+    var id = this.id;
+      $('.playdate').hide()
+      $(`.playdate.${id}`).toggle(500);
+  })
+  $('.sublinks.invites li').on('click', function(){
     var id = this.id;
       $('.playdate').hide()
       $(`.${id}`).toggle(500);
