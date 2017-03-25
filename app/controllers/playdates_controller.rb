@@ -17,6 +17,10 @@ class PlaydatesController < ApplicationController
 
   # GET /playdates/1/edit
   def edit
+    @playdate = Playdate.find_by_id(params[:id])
+    if !current_user || current_user != @playdate.user
+      redirect_to root_path
+    end
   end
 
   # POST /playdates
@@ -36,6 +40,10 @@ class PlaydatesController < ApplicationController
 
   # DELETE /playdates/1
   def destroy
+    @playdate = Playdate.find_by_id(params[:id])
+    if !current_user || current_user != @playdate.user
+      redirect_to root_path
+    end
     @playdate.destroy
   end
 
