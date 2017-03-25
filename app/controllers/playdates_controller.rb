@@ -1,6 +1,6 @@
 class PlaydatesController < ApplicationController
   before_action :set_playdate,    only: [:show, :edit, :update, :destroy]
-  before_action :is_current_user, only: [       :edit,          :destroy]
+  before_action :is_current_user, only: [       :edit, :update, :destroy]
 
   # GET /playdates
   def index
