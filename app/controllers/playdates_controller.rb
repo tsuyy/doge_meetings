@@ -1,5 +1,6 @@
 class PlaydatesController < ApplicationController
-  before_action :set_playdate, only: [:show, :edit, :update, :destroy]
+  before_action :set_playdate,    only: [:show, :edit, :update, :destroy]
+  before_action :is_current_user, only: [       :edit,          :destroy]
 
   # GET /playdates
   def index
@@ -17,10 +18,6 @@ class PlaydatesController < ApplicationController
 
   # GET /playdates/1/edit
   def edit
-    @playdate = Playdate.find_by_id(params[:id])
-    if !current_user || current_user != @playdate.user
-      redirect_to root_path
-    end
   end
 
   # POST /playdates
@@ -40,14 +37,17 @@ class PlaydatesController < ApplicationController
 
   # DELETE /playdates/1
   def destroy
-    @playdate = Playdate.find_by_id(params[:id])
-    if !current_user || current_user != @playdate.user
-      redirect_to root_path
-    end
     @playdate.destroy
   end
 
   private
+    def is_current_user
+      @playdate = Playdate.find_by_id(params[:id])
+      if !current_user || current_user != @playdate.user
+        redirect_to root_path
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_playdate
       @playdate = Playdate.find(params[:id])
