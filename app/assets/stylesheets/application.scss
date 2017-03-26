@@ -72,6 +72,10 @@ div.before-sign-in, .btn, .dropdown-menu {
 
 }
 
+.btn-block {
+  min-width: 350px;
+}
+
 .panel.list-group {
   max-width: 350px;
   min-width: 350px;
@@ -85,6 +89,7 @@ div.before-sign-in, .btn, .dropdown-menu {
   padding: 20px 18px 75px 18px;
   background: white;
   max-width: 350px;
+  min-width: 350px;
 }
 
 .form-control {
@@ -93,7 +98,13 @@ div.before-sign-in, .btn, .dropdown-menu {
 
 img.dog-modal {
   max-width: 298px;
+  min-width: 298px;
 }
+
+.modal-content {
+  max-width: 301px;
+}
+
 
 .playdate {
   display: none;
