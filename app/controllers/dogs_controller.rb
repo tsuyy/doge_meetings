@@ -1,16 +1,22 @@
 class DogsController < ApplicationController
   before_action :set_dog,         only: [:edit, :destroy, :update]
-  before_action :is_current_user, only: [:edit, :destroy, :update, :new, :create]
+  before_action :is_current_user, only: [:edit, :destroy, :update]
 
   def index
     @dogs = Dog.all
   end
 
   def new
+    if current_user.id != params[:user_id].to_i
+      redirect_to root_path
+    end
     @dog = Dog.new(user_id: params[:user_id])
   end
 
   def create
+    if current_user.id != params[:user_id].to_i
+      redirect_to root_path
+    end
     dog = dog_params
     dog[:user_id] = params[:user_id]
     @dog = Dog.create(dog)
