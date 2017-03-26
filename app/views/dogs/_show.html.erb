@@ -9,7 +9,7 @@
       <p class='name'><%= dog.name %></p>
     <% end %>
 
-    <%= content_tag :div, class: ["modal", "fade"], id: "dog#{dog.id}", tabindex: "-1", role: "dialog" do %> 
+    <%= content_tag :div, class: ["modal", "fade"], id: "dog#{dog.id}", tabindex: "-1", role: "dialog" do %>
         <div class="modal-dialog modal-sm">
           <div class= "modal-content">
 
@@ -18,8 +18,10 @@
             <% else %>
               <%= image_tag(dog.avatar.url(:medium)) %>
             <% end %>
-            <%= link_to edit_dog_path(dog) do %>
+            <% if current_user?(@user) %>
+              <%= link_to edit_dog_path(dog) do %>
               <i class="fa fa-pencil-square-o pull-right" aria-hidden="true"></i>
+              <% end %>
             <% end %>
 
             <p class='josefin'>
