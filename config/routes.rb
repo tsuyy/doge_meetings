@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :dogs, shallow: true, except: (:index)
   end
 
+  post  '/invites',    to: 'invites#create', as: 'new_invite'
+  patch '/invites',    to: 'invites#update', as: 'edit_invite'
+
   get     '/login',    to: 'sessions#new'
   post    '/login',    to: 'sessions#create'
   delete  '/logout',   to: 'sessions#destroy'

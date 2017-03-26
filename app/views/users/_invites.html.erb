@@ -7,8 +7,8 @@
               <p><%= invite.playdate.description%></p>
             </p>
             <p class="text-center">
-              <button class="btn btn-default">Accept</button>
-              <button class="btn btn-default">Decline</button>
+              <%= button_to "Accept", edit_invite_path, method: "patch", controller: "invites", action: "update", params: {user_id: "#{invite.user.id}", playdate_id: "#{invite.playdate.id}", id: "#{invite.id}", status: "1"}, class: "btn btn-default" %>
+              <%= button_to "Decline", edit_invite_path, method: "patch", controller: "invites", action: "update", params: {user_id: "#{invite.user.id}", playdate_id: "#{invite.playdate.id}", id: "#{invite.id}", status: "2"}, class: "btn btn-default" %>
             </p>
           </div>
         </div>
