@@ -19,8 +19,14 @@
 $(document).on('turbolinks:load', function() {
   $('.sublinks.playdates li').on('click', function(){
     var id = this.id;
+    var playdate = $(`.playdate.${id}`)
+    if (playdate.css("display") == "block") {
+      playdate.toggle(300);
+    }
+    else{
       $('.playdate').hide()
-      $(`.playdate.${id}`).toggle(500);
+      playdate.toggle(300);
+    }
   })
   // $('.sublinks.invites li').on('click', function(){
   //   var id = this.id;

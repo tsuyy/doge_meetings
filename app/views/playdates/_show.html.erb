@@ -1,23 +1,25 @@
 <p id="notice"><%= notice %></p>
-  <% @user.playdates.each do |playdate| %>
-    <%= content_tag :div, class: ["#{playdate.id}", "playdate", "col-xs-12 col-sm-12 col-md-7", 'block'] do %>
+  <% @user.invites.where(status: 1).each do |invite| %>
+    <%= content_tag :div, class: ["#{invite.playdate.id}", "playdate", "col-xs-12 col-sm-12 col-md-7", 'block'] do %>
       <p class='josefin'>
         <% if current_user?(@user) %>
-          <%= link_to edit_playdate_path(playdate) do %>
+          <%= link_to edit_playdate_path(invite.playdate) do %>
           <i class="fa fa-pencil-square-o pull-right" aria-hidden="true"></i>
         <% end %>
+        <strong>Host:</strong>
+        <%= invite.playdate.user.name %> <br>
 
         <strong>Location:</strong>
-        <%= playdate.location %> <br>
+        <%= invite.playdate.location %> <br>
 
         <strong>Date:</strong>
-        <%= playdate.date.strftime("%m/%d/%Y") %><br>
+        <%= invite.playdate.date.strftime("%m/%d/%Y") %><br>
 
         <strong>Description:</strong>
-        <%= playdate.description %> <br>
+        <%= invite.playdate.description %> <br>
 
         <strong>Title:</strong>
-        <%= playdate.title %>
+        <%= invite.playdate.title %>
       </p>
     <% end %>
   <% end %>

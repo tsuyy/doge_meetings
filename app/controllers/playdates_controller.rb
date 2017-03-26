@@ -31,6 +31,7 @@ class PlaydatesController < ApplicationController
     playdate = playdate_params
     playdate[:user_id] = params[:user_id]
     @playdate = Playdate.create(playdate)
+    Invite.create(user_id: params[:user_id], playdate_id: @playdate.id, status: 1)
     redirect_to user_path(@playdate.user)
 
   end
