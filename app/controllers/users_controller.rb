@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user,        only: [:show, :edit, :update, :destroy]
+  before_action :is_current_user, only: [       :edit, :update, :destroy]
 
   def home
   end
@@ -24,10 +25,6 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find_by_id(params[:id])
-    if @user != current_user
-      redirect_to root_path
-    end
   end
 
   # POST /users
@@ -45,14 +42,17 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user = User.find_by_id(params[:id])
-    if @user != current_user
-      redirect_to root_path
-    end
     @user.destroy
   end
 
   private
+    def is_current_user
+      @user = User.find_by_id(params[:id])
+      if @user != current_user
+        redirect_to root_path
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
