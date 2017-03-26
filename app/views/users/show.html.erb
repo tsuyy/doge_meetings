@@ -15,11 +15,13 @@
 
     <p class='josefin'>
       📍 <%= @user.city %><br>
-      <%= link_to "Add Dog", new_user_dog_path(@user), class: 'btn btn-default' %>
-      <%= link_to "Create Playdate", new_user_playdate_path(@user), class: 'btn btn-default' %>
-
+      <% if current_user?(@user) %>
+        <%= link_to "Add Dog", new_user_dog_path(@user), class: 'btn btn-default' %>
+        <%= link_to "Create Playdate", new_user_playdate_path(@user), class: 'btn btn-default' %>
+      <% end %>
     </p>
 
+    <% if current_user?(@user) %>
     <div class="panel list-group">
       <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"><%= @user.name %>'s Playdates<span class='pull-right'>🐾</span></li>
       <div id="sm" class="sublinks collapse playdates">
@@ -34,16 +36,16 @@
        <% end %>
       </div>
     </div>
+    <% end %>
   </div>
 
   <div class='col-xs-12 col-sm-12 col-md-7'>
     <%= render 'dogs/show' %>
   </div>
-  <div class='col-xs-12 col-sm-12 col-md-7'>
+  <div>  
     <%= render 'playdates/show' %>
   </div>
   <div class='col-xs-12 col-sm-12 col-md-7'>
     <%= render 'users/invites' %>
   </div>
-
 </div>
