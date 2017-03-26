@@ -32,7 +32,7 @@
       <li class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Invites <i class="fa fa-envelope pull-right" aria-hidden="true"></i></li>
       <div id="sl" class="sublinks collapse invites">
        <% @user.invites.each do |invite|%>
-        <%= content_tag :li, "Invite From: " + invite.playdate.user.name, id: "#{invite.id}", class: ["list-group-item"], data: { target: "modal" } %>
+        <%= content_tag :li, "Invite From: " + invite.playdate.user.name, class: ["list-group-item"], data: { toggle: "modal", target: "#invite#{invite.id}" } %>
        <% end %>
       </div>
     </div>
@@ -42,6 +42,10 @@
   <div class='col-xs-12 col-sm-12 col-md-7'>
     <%= render 'dogs/show' %>
   </div>
+  <div>  
     <%= render 'playdates/show' %>
-
+  </div>
+  <div class='col-xs-12 col-sm-12 col-md-7'>
+    <%= render 'users/invites' %>
+  </div>
 </div>
