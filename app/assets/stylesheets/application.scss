@@ -29,7 +29,7 @@ body {
 
 }
 
-.header {
+.header, h1 {
   padding-top: 0px;
   margin-top: 20px;
   font-family: 'Barrio', cursive;
@@ -43,9 +43,12 @@ ul.pull-left {
   margin-top: 25px;
 }
 
-.collapsed:hover, .btn-default:hover {
-  background-color: #75efde!important;
+.list-group-item:hover, .btn-default:hover {
+  background-color: #75efde;
+  color: #fff!important;
+  border-color: #75efde;
 }
+
 
 p.name {
   max-width: 350px;
@@ -72,6 +75,10 @@ div.before-sign-in, .btn, .dropdown-menu {
 
 }
 
+.btn-block {
+  min-width: 350px;
+}
+
 .panel.list-group {
   max-width: 350px;
   min-width: 350px;
@@ -85,6 +92,7 @@ div.before-sign-in, .btn, .dropdown-menu {
   padding: 20px 18px 75px 18px;
   background: white;
   max-width: 350px;
+  min-width: 350px;
 }
 
 .form-control {
@@ -93,15 +101,19 @@ div.before-sign-in, .btn, .dropdown-menu {
 
 img.dog-modal {
   max-width: 298px;
+  min-width: 298px;
 }
+
+.modal-content {
+  max-width: 301px;
+}
+
 
 .playdate {
   display: none;
-
 }
 
 .block {
-  display: none;
   background-color: white;
   width: 350px;
   box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);

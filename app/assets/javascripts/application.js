@@ -33,4 +33,5 @@ $(document).on('turbolinks:load', function() {
   //     $('.playdate').hide()
   //     $(`.${id}`).toggle(500);
   // })
+
 })

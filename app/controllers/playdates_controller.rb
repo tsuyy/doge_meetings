@@ -44,6 +44,7 @@ class PlaydatesController < ApplicationController
   # DELETE /playdates/1
   def destroy
     @playdate.destroy
+    redirect_to user_path(@playdate.user)
   end
 
   private

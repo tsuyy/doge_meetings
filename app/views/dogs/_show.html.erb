@@ -1,5 +1,6 @@
 <div class='row'>
   <% @user.dogs.each do |dog| %>
+  <div class='col-md-6'>
     <%= content_tag :div, class: ["dog-modal"] do %>
       <%if dog.avatar.blank? %>
         <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
@@ -8,6 +9,7 @@
       <% end %>
       <p class='name'><%= dog.name %></p>
     <% end %>
+  </div>
 
     <%= content_tag :div, class: ["modal", "fade"], id: "dog#{dog.id}", tabindex: "-1", role: "dialog" do %>
         <div class="modal-dialog modal-sm">
@@ -16,7 +18,7 @@
             <%if dog.avatar.blank? %>
               <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal') %>
             <% else %>
-              <%= image_tag(dog.avatar.url(:medium)) %>
+              <%= image_tag(dog.avatar.url(:medium), class: 'dog-modal') %>
             <% end %>
             <% if current_user?(@user) %>
               <%= link_to edit_dog_path(dog) do %>
