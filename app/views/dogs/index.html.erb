@@ -19,7 +19,7 @@
           <%if dog.avatar.blank? %>
             <%= link_to image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal'), user_path(dog.user) %>
           <% else %>
-            <%= link_to image_tag(dog.avatar.url(:medium)), user_path(dog.user) %>
+            <%= link_to image_tag(dog.avatar.url(:medium), class: 'dog-modal'), user_path(dog.user) %>
           <% end %>
 
           <p class='josefin'>
