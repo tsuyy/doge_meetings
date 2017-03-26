@@ -1,8 +1,7 @@
 class InvitesController < ApplicationController
   def create
     invite = Invite.new(invite_params)
-    p "--------------INVITE  CREATE--------------", invite
-    if invite.save
+    if logged_in? && invite.save
       redirect_to user_path(current_user)
     else
       flash[:error] = "Bad Invite"
@@ -12,10 +11,9 @@ class InvitesController < ApplicationController
   end
 
   def update
-    invite = Invite.where(id: params[:id])
-    p "--------------INVITE  UPDATE--------------", invite
-    if !invite
-      flash[:error] = "Bad Invite"
+    invite = Invite.where(id: params[:id]).take
+    if !logged_in?  || current_user != invite.user
+      flash[:error] = "No Can Do"
       redirect_to root_path
     else
       invite.update(invite_params)
