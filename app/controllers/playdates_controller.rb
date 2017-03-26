@@ -1,6 +1,6 @@
 class PlaydatesController < ApplicationController
   before_action :set_playdate,    only: [:show, :edit, :update, :destroy]
-  before_action :is_current_user, only: [       :edit, :update, :destroy, :new, :create]
+  before_action :is_current_user, only: [       :edit, :update, :destroy]
 
   # GET /playdates
   def index
@@ -13,6 +13,9 @@ class PlaydatesController < ApplicationController
 
   # GET /playdates/new
   def new
+    if current_user.id != params[:user_id].to_i
+      redirect_to root_path
+    end
     @playdate = Playdate.new(user_id: params[:user_id])
   end
 
@@ -22,6 +25,9 @@ class PlaydatesController < ApplicationController
 
   # POST /playdates
   def create
+    if current_user.id != params[:user_id].to_i
+      redirect_to root_path
+    end
     playdate = playdate_params
     playdate[:user_id] = params[:user_id]
     @playdate = Playdate.create(playdate)
