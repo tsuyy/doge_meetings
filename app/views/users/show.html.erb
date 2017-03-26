@@ -29,7 +29,11 @@
           <%= content_tag :li, invite.playdate.title, id: "#{invite.playdate.id}", class: ["list-group-item"] %>
         <% end %>
       </div>
-      <li class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Invites <i class="fa fa-envelope pull-right" aria-hidden="true"></i></li>
+      <li class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Invites
+      <% if @user.invites.where(status: 0).count > 0 %>
+        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+      <% end %>
+      <i class="fa fa-envelope pull-right" aria-hidden="true"></i></li>
       <div id="sl" class="sublinks collapse invites">
        <% @user.invites.where(status: 0).each do |invite|%>
         <%= content_tag :li, "Invite From: " + invite.playdate.user.name, class: ["list-group-item"], data: { toggle: "modal", target: "#invite#{invite.id}" } %>
