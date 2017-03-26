@@ -22,9 +22,9 @@ $(document).on('turbolinks:load', function() {
       $('.playdate').hide()
       $(`.playdate.${id}`).toggle(500);
   })
-  $('.sublinks.invites li').on('click', function(){
-    var id = this.id;
-      $('.playdate').hide()
-      $(`.${id}`).toggle(500);
-  })
+  // $('.sublinks.invites li').on('click', function(){
+  //   var id = this.id;
+  //     $('.playdate').hide()
+  //     $(`.${id}`).toggle(500);
+  // })
 })

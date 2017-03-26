@@ -1,0 +1,16 @@
+<% @user.invites.each do |invite|%>
+  <%= content_tag :div, class: ["modal", "fade"], id: "invite#{invite.id}", tabindex: "-1", role: "dialog" do %> 
+        <div class="modal-dialog modal-sm">
+          <div class= "modal-content">
+            <p class='josefin'>
+              <h2 class="text-center"><%= invite.playdate.title %></h2>
+              <p><%= invite.playdate.description%></p>
+            </p>
+            <p class="text-center">
+              <button class="btn btn-default">Accept</button>
+              <button class="btn btn-default">Decline</button>
+            </p>
+          </div>
+        </div>
+    <% end %>
+<% end %>
