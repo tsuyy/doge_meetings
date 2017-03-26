@@ -23,7 +23,7 @@
 
     <% if current_user?(@user) %>
     <div class="panel list-group">
-      <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"><%= @user.name %>'s Playdates<span class='pull-right'>🐾</span></li>
+      <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"><%= @user.name %>'s Playdates <i class="fa fa-paw pull-right" aria-hidden="true"></i></li>
       <div id="sm" class="sublinks collapse playdates">
         <% @user.playdates.each do |playdate| %>
           <%= content_tag :li, playdate.title, id: "#{playdate.id}", class: ["list-group-item"] %>
