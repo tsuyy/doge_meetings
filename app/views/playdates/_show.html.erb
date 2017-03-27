@@ -6,6 +6,9 @@
           <%= link_to edit_playdate_path(invite.playdate) do %>
           <i class="fa fa-pencil-square-o pull-right" aria-hidden="true"></i>
         <% end %>
+        <strong>Title:</strong>
+        <%= invite.playdate.title %>
+        
         <strong>Host:</strong>
         <%= invite.playdate.user.name %> <br>
 
@@ -18,8 +21,6 @@
         <strong>Description:</strong>
         <%= invite.playdate.description %> <br>
 
-        <strong>Title:</strong>
-        <%= invite.playdate.title %>
       </p>
     <% end %>
   <% end %>
