@@ -61,7 +61,6 @@ p.name {
 }
 
 p.josefin {
-  max-width: 350px;
   text-align: center;
   font-size: 20px;
   font-family: 'Josefin Sans', sans-serif;
@@ -105,7 +104,8 @@ img.dog-modal {
 }
 
 .modal-content {
-  max-width: 301px;
+  width: 505px;
+  text-align: center;
 }
 
 
@@ -118,6 +118,7 @@ img.dog-modal {
   width: 350px;
   box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
 }
+
 form.button_to {
   display: inline;
 }
