@@ -1,14 +1,14 @@
 <% @user.invites.each do |invite|%>
-  <%= content_tag :div, class: ["modal", "fade"], id: "invite#{invite.id}", tabindex: "-1", role: "dialog" do %> 
+  <%= content_tag :div, class: ["modal", "fade"], id: "invite#{invite.id}", tabindex: "-1", role: "dialog" do %>
         <div class="modal-dialog modal-sm">
           <div class= "modal-content">
 
-          <iframe width="600" height="450" frameborder="0" style="border:0"
+          <iframe width="500" height="350" frameborder="0" style="border:0"
             src="https://www.google.com/maps/embed/v1/search?q=<%= invite.playdate.location %>&key=AIzaSyBmkOMQR7DSJ1IP7y6Bg3Uoxq4JeZH4MjM" allowfullscreen></iframe>
 
             <p class='josefin'>
               <h2 class="text-center"><%= invite.playdate.title %></h2>
-              <p><%= invite.playdate.description%></p>
+              <p class='josefin'><%= invite.playdate.description%></p>
             </p>
             <p class="text-center">
               <%= button_to "Accept", edit_invite_path, method: "patch", controller: "invites", action: "update", params: {user_id: "#{invite.user.id}", playdate_id: "#{invite.playdate.id}", id: "#{invite.id}", status: "1"}, class: "btn btn-default" %>

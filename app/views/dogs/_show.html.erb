@@ -1,20 +1,22 @@
 <div class='row'>
   <% @user.dogs.each do |dog| %>
   <div class='col-md-6'>
-    <%= content_tag :div, class: ["dog-modal"] do %>
-      <%if dog.avatar.blank? %>
-        <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
-      <% else %>
-        <%= image_tag(dog.avatar.url(:medium), class: 'polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
+      <%= content_tag :div, class: ["dog-modal"] do %>
+        <%if dog.avatar.blank? %>
+          <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
+        <% else %>
+          <%= image_tag(dog.avatar.url(:medium), class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
+        <% end %>
+        <p class='name'><%= dog.name %></p>
       <% end %>
-      <p class='name'><%= dog.name %></p>
-    <% end %>
+
   </div>
+</div>
 
     <%= content_tag :div, class: ["modal", "fade"], id: "dog#{dog.id}", tabindex: "-1", role: "dialog" do %>
         <div class="modal-dialog modal-sm">
           <div class= "modal-content">
-
+            <div class='crop'>
             <%if dog.avatar.blank? %>
               <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal') %>
             <% else %>
@@ -25,6 +27,7 @@
               <i class="fa fa-pencil-square-o pull-right" aria-hidden="true"></i>
               <% end %>
             <% end %>
+          </div>
 
             <p class='josefin'>
               Name: <%= dog.name %><br>
@@ -46,7 +49,7 @@
               Weight: <%= dog.weight %> lb <br>
               <% if dog.temperament != "" %>
                 Temperament: <%= dog.temperament %><br>
-              <% end %> 
+              <% end %>
             </p>
 
           </div>
