@@ -101,12 +101,16 @@ div.before-sign-in, .btn, .dropdown-menu {
 
 img.dog-modal {
   width: 55%;
-  padding-top: 40px;
+}
+
+.img-responsive {
+  width: 100%
 }
 
 .modal-content {
   width: 505px;
   text-align: center;
+  padding-top: 30px;
 }
 
 
@@ -118,6 +122,7 @@ img.dog-modal {
   background-color: white;
   width: 350px;
   box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
+  left: 15px;
 }
 
 form.button_to {
