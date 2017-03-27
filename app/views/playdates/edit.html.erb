@@ -30,10 +30,10 @@
         <%= f.text_area :description, class: 'form-control', required: true, maxlength: 1000 %>
 
 
-        <%= f.submit 'Submit', class: "btn btn-default" %><br>
+        <%= f.submit 'Submit', class: "btn btn-default" %><br><br>
 
     <% end %>
 
-    <%= link_to 'Back', user_path(@playdate.user) %> | <%= link_to 'Delete', @playdate, method: :delete %>
+    <%= link_to 'Back', user_path(@playdate.user) %> | <%= link_to 'Delete', @playdate, method: :delete, data: { confirm: 'Are you sure you want to delete this playdate? Click OK to continue.' } %>
   </div>
 </div>
