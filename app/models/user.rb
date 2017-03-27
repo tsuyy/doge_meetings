@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :name, :presence => true, format: { with:  /\A[a-zA-Z\s\.]+\z/,
     message: "only allows letters and spaces" }, length: { minimum: 1 },
     uniqueness: true
+  validates :city, :presence => true, format: { with:  /\A[a-zA-Z\s\.]+\z/,
+    message: "only allows letters and spaces" }, length: { minimum: 1 }
 end
