@@ -76,6 +76,7 @@ div.before-sign-in, .btn, .dropdown-menu {
 
 .btn-block {
   min-width: 350px;
+  max-width: 350px;
 }
 
 .panel.list-group {
@@ -88,7 +89,7 @@ div.before-sign-in, .btn, .dropdown-menu {
 
 .polaroid {
   box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
-  padding: 20px 18px 75px 18px;
+  padding: 24px 24px 75px 24px;
   background: white;
   max-width: 350px;
   min-width: 350px;
@@ -99,8 +100,8 @@ div.before-sign-in, .btn, .dropdown-menu {
 }
 
 img.dog-modal {
-  max-width: 298px;
-  min-width: 298px;
+  width: 55%;
+  padding-top: 40px;
 }
 
 .modal-content {

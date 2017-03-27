@@ -8,7 +8,7 @@
 
             <p class='josefin'>
               <h2 class="text-center"><%= invite.playdate.title %></h2>
-              <p><%= invite.playdate.description%></p>
+              <p class='josefin'><%= invite.playdate.description%></p>
             </p>
             <p class="text-center">
               <%= button_to "Accept", edit_invite_path, method: "patch", controller: "invites", action: "update", params: {user_id: "#{invite.user.id}", playdate_id: "#{invite.playdate.id}", id: "#{invite.id}", status: "1"}, class: "btn btn-default" %>
