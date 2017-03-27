@@ -8,7 +8,7 @@
         <%if dog.avatar.blank? %>
           <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
         <% else %>
-          <%= image_tag(dog.avatar.url(:medium), class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
+          <%= image_tag(dog.avatar.url(:large), class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
         <% end %>
         <p class='name'><%= dog.name %></p>
 
