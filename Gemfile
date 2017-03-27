@@ -37,6 +37,15 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 # Paper Clip
 gem 'paperclip'
+# Rspec for testing
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :development do
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
