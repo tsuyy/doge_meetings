@@ -11,19 +11,27 @@
     </div>
   <% end %>
     <%= f.label :image %>
-    <%= f.file_field :avatar, class: 'form-control' %>
+    <% if @user.avatar.blank? %>
+      <%= f.file_field :avatar, class: 'form-control', required: true %>
+    <% else %>
+      <%= f.file_field :avatar, class: 'form-control' %>
+    <% end %>
 
     <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.text_field :name, class: 'form-control', required: true, maxlength: 200 %>
 
     <%= f.label :city %>
-    <%= f.text_field :city, class: 'form-control' %>
+    <%= f.text_field :city, class: 'form-control', required: true, maxlength: 59 %>
 
     <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control' %>
+    <%= f.text_field :email, class: 'form-control', required: true, maxlength: 100 %>
 
     <%= f.label :password %>
-    <%= f.text_field :password, class: 'form-control' %><br>
+    <% if @user.password_digest.nil? %>
+      <%= f.text_field :password, class: 'form-control', required: true, maxlength: 25 %><br>
+    <% else %>
+      <%= f.text_field :password, class: 'form-control', maxlength: 25 %><br>
+    <% end %>
 
     <%= f.submit 'OK', class: "btn btn-default" %>
 <% end %>
