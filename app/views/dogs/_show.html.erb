@@ -44,7 +44,9 @@
                 <i class="fa fa-times" aria-hidden="true"></i>
               <% end %><br>
               Weight: <%= dog.weight %> lb <br>
-              Temperament: <%= dog.temperament %><br>
+              <% if dog.temperament != "" %>
+                Temperament: <%= dog.temperament %><br>
+              <% end %> 
             </p>
 
           </div>
