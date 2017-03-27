@@ -1,26 +1,28 @@
 <p id="notice"><%= notice %></p>
-  <% @user.invites.where(status: 1).each do |invite| %>
-    <%= content_tag :div, class: ["#{invite.playdate.id}", "playdate", "col-xs-12 col-sm-12 col-md-7", 'block'] do %>
-      <p class='josefin'>
-        <% if current_user?(@user) %>
+<% @user.invites.where(status: 1).each do |invite| %>
+  <%= content_tag :div, class: ["#{invite.playdate.id}", "playdate", "col-xs-12 col-sm-12 col-md-7", 'block'] do %>
+    <p class='josefin'>
+      <% if current_user?(@user) %>
+        <% if current_user == invite.playdate.user %>
           <%= link_to edit_playdate_path(invite.playdate) do %>
-          <i class="fa fa-pencil-square-o pull-right" aria-hidden="true"></i>
+            <i class="fa fa-pencil-square-o pull-right" aria-hidden="true"></i>
+          <% end %>
         <% end %>
+      
+        <h2><%= invite.playdate.title %></h2><br>
+
         <strong>Host:</strong>
-        <%= invite.playdate.user.name %> <br>
+        <%= invite.playdate.user.name %><br>
 
         <strong>Location:</strong>
-        <%= invite.playdate.location %> <br>
+        <%= invite.playdate.location %><br>
 
-        <strong>Date:</strong>
-        <%= invite.playdate.date.strftime("%m/%d/%Y") %><br>
+        <strong>Start Time:</strong>
+        <%= invite.playdate.date.strftime("%r %m/%d/%Y") %><br>
 
         <strong>Description:</strong>
-        <%= invite.playdate.description %> <br>
-
-        <strong>Title:</strong>
-        <%= invite.playdate.title %>
-      </p>
-    <% end %>
+        <%= invite.playdate.description %><br>
+      <% end %>
+    </p>
   <% end %>
 <% end %>
