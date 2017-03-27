@@ -4,23 +4,27 @@
   <% @dogs.each do |dog| %>
     <%= content_tag :div, class: ["dog-modal"] do %>
       <div class='col-xs-12 col-sm-6 col-md-4'>
+
         <%if dog.avatar.blank? %>
-          <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'img-responsive polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
+          <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
         <% else %>
-          <%= image_tag(dog.avatar.url(:medium), class: 'img-responsive polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
+          <%= image_tag(dog.avatar.url(:medium), class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
         <% end %>
         <p class='name'><%= dog.name %></p>
+
       </div>
     <% end %>
 
     <%= content_tag :div, class: ["modal", "fade"], id: "dog#{dog.id}", tabindex: "-1", role: "dialog" do %>
       <div class="modal-dialog modal-sm">
         <div class= "modal-content">
+          <div class='crop'>
           <%if dog.avatar.blank? %>
             <%= link_to image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal'), user_path(dog.user) %>
           <% else %>
             <%= link_to image_tag(dog.avatar.url(:medium), class: 'dog-modal'), user_path(dog.user) %>
           <% end %>
+        </div>
 
           <p class='josefin'>
             Name: <%= dog.name %><br>
