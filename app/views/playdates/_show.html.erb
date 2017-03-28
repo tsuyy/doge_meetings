@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
+<section>
 <% @user.invites.where(status: 1).each do |invite| %>
-  <%= content_tag :div, class: ["#{invite.playdate.id}", "playdate", "col-xs-12 col-sm-12 col-md-7", 'block'] do %>
+  <%= content_tag :div, class: ["#{invite.playdate.id}", "playdate", 'block'] do %>
     <p class='josefin'>
       <% if current_user?(@user) %>
         <% if current_user == invite.playdate.user %>
@@ -8,7 +8,7 @@
             <i class="fa fa-pencil-square-o pull-right" aria-hidden="true"></i>
           <% end %>
         <% end %>
-        
+
         <strong>Title:</strong>
         <%= invite.playdate.title %><br>
 
@@ -27,3 +27,4 @@
     </p>
   <% end %>
 <% end %>
+</section>
