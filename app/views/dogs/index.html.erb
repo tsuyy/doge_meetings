@@ -1,19 +1,17 @@
 <h2 class='text-center'>Dogs</h2>
-
-<div class='row'>
+<div class='wrapper'>
   <% @dogs.each do |dog| %>
     <%= content_tag :div, class: ["dog-modal"] do %>
-      <div class='col-xs-12 col-sm-6 col-md-4'>
-
+      <section>
         <%if dog.avatar.blank? %>
           <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
         <% else %>
-          <%= image_tag(dog.avatar.url(:medium), class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
+          <%= image_tag(dog.avatar.url(:large), class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
         <% end %>
         <p class='name'><%= dog.name %></p>
-
-      </div>
     <% end %>
+      </section>
+
 
     <%= content_tag :div, class: ["modal", "fade"], id: "dog#{dog.id}", tabindex: "-1", role: "dialog" do %>
       <div class="modal-dialog modal-sm">
