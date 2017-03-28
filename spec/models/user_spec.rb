@@ -18,5 +18,12 @@ RSpec.describe User do
     specify 'when city is blank' do
       expect(FactoryGirl.build(:user, city: '')).not_to be_valid
     end
+    specify 'when email is blank' do
+      expect(FactoryGirl.build(:user, email: '')).not_to be_valid
+    end
+    specify 'when password_digest is blank' do
+      expect(FactoryGirl.build(:user, password_digest: '')).not_to be_valid
+    end
   end
+
 end
