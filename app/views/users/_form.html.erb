@@ -24,7 +24,7 @@
     <%= f.text_field :city, class: 'form-control', required: true, maxlength: 59 %>
 
     <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control', required: true, maxlength: 100 %>
+    <%= f.email_field :email, class: 'form-control', required: true, maxlength: 100 %>
 
     <%= f.label :password %>
     <% if @user.password_digest.nil? %>

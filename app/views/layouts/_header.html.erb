@@ -43,5 +43,9 @@
       <% end %>
     </h1>
   </div>
-
+  <% flash.each do |name, message| %>
+    <div class="flash jumbotron">
+      <%= name.capitalize %>: <%= message %>
+    </div>
+  <% end %>
 </header>
