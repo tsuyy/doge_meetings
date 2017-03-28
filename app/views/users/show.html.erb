@@ -1,6 +1,3 @@
-
-<p id="notice"><%= notice %></p>
-
 <div class='row'>
   <div class='col-xs-12 col-sm-4 col-md-4'>
     <%if @user.avatar.blank? %>
@@ -45,10 +42,11 @@
             <%= content_tag :li, invite.playdate.title, id: "#{invite.playdate.id}", class: ["list-group-item"] %>
           <% end %>
         </div>
-        <li class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Invites
-        <% if @user.invites.where(status: 0).count > 0 %>
+        <li class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">
+          <% if @user.invites.where(status: 0).count > 0 %>
           <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-        <% end %>
+          <% end %>
+          Invites
         <i class="fa fa-envelope pull-right" aria-hidden="true"></i></li>
         <div id="sl" class="sublinks collapse invites">
          <% @user.invites.where(status: 0).each do |invite|%>

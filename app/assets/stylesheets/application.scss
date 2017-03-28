@@ -142,3 +142,18 @@ form.button_to {
   -moz-column-gap: 3em;
   -webkit-column-gap: 3em;
 }
+
+.flash {
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+
+}
+.bg-danger {
+  background-color: rgba(255, 84, 102, 0.38);
+}
+
+.bg-success {
+  background-color: rgba(141, 243, 229, 0.49);
+}
