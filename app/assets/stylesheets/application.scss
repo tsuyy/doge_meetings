@@ -43,7 +43,9 @@ ul.pull-left {
   margin-top: 25px;
 }
 
-.list-group-item:hover, .btn-default:hover, .dropdown-menu > li > a:hover {
+.list-group-item:hover,
+.btn-default:hover,
+.dropdown-menu > li > a:hover {
   background-color: #75efde;
   color: #fff!important;
   border-color: #75efde;
@@ -101,6 +103,7 @@ div.before-sign-in, .btn, .dropdown-menu {
 
 img.dog-modal {
   width: 65%;
+  box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
 }
 
 .carousel {
