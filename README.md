@@ -1,15 +1,28 @@
-# README
+# 🐾 Doge Meetings!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An easy way to set up playdates for your dog(s)!
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+ImageMagick
 
-* System dependencies
+seeddump
 
-* Configuration
+rspec
+factorygirl
+launchy
+capybara
+
+
+## Technologies Used
+
+* HTML
+* CSS
+* JavaScript
+* Ruby on Rails
+* jQuery
+* Bootstrap
+* PostgreSQL
 
 * Database creation
 
