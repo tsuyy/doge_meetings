@@ -2,6 +2,7 @@ class InvitesController < ApplicationController
   def create
     invite = Invite.new(invite_params)
     if logged_in? && invite.save
+      flash[:success] = "You've invited #{invite.user.name.capitalize} to a playdate!"
       redirect_to user_path(current_user)
     else
       flash[:error] = "Bad Invite"
