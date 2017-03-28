@@ -11,9 +11,9 @@ Playdate.delete_all
 Dog.delete_all
 User.delete_all
 
-doge = User.create({
-	name: "Doge",
-	email: "d@d.com",
+kevin = User.create({
+	name: "Kevin",
+	email: "k@k.com",
 	password: "123",
 	city: "San Francisco"
 })
@@ -36,8 +36,8 @@ regelyn = User.create({
 	city: "San Francisco"
 })
 
-foo = Dog.create({
-	name: "Foo",
+doge = Dog.create({
+	name: "Doge",
 	age: 2,
 	sex: "Male",
 	breed: "Shiba Inu",
@@ -45,7 +45,7 @@ foo = Dog.create({
 	neutered: true,
 	weight: 20,
 	temperament: "confused",
-	user_id: doge.id
+	user_id: kevin.id
 })
 ein = Dog.create({
 	name: "Ein",
@@ -95,12 +95,12 @@ ein_pals = Playdate.create({
 	description: "Ein wants a pal to go on a space adventure!",
 	user_id: regelyn.id
 })
-foo_pals = Playdate.create({
+doge_pals = Playdate.create({
 	title: "Looking For A Buddy",
 	location: "Duboce Park",
 	date: Date.new(),
 	description: "Need a play buddy!",
-	user_id: doge.id
+	user_id: kevin.id
 })
 apollo_pals = Playdate.create({
 	title: "Save My Dog From Boredom",
@@ -110,12 +110,12 @@ apollo_pals = Playdate.create({
 	user_id: kody.id
 })
 
-ein_foo = Invite.create ({
+ein_doge = Invite.create ({
 	user_id: kody.id,
 	playdate_id: ein_pals.id,
 	status: 0
 })
-ein_foo = Invite.create ({
+ein_doge = Invite.create ({
 	user_id: regelyn.id,
 	playdate_id: ein_pals.id,
 	status: 1
@@ -132,24 +132,24 @@ apollo_koda = Invite.create ({
 	status: 1
 })
 
-koda_foo = Invite.create ({
-	user_id: doge.id,
+koda_doge = Invite.create ({
+	user_id: kevin.id,
 	playdate_id: koda_pals.id,
 	status: 0
 })
-koda_foo = Invite.create ({
+koda_doge = Invite.create ({
 	user_id: yvonne.id,
 	playdate_id: koda_pals.id,
 	status: 1
 })
 
-foo_apollo = Invite.create ({
+doge_apollo = Invite.create ({
 	user_id: yvonne.id,
-	playdate_id: foo_pals.id,
+	playdate_id: doge_pals.id,
 	status: 0
 })
-foo_apollo = Invite.create ({
-	user_id: doge.id,
-	playdate_id: foo_pals.id,
+doge_apollo = Invite.create ({
+	user_id: kevin.id,
+	playdate_id: doge_pals.id,
 	status: 1
 })

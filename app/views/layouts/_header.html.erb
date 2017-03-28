@@ -20,7 +20,7 @@
             </li>
             <li>
               <%= link_to dogs_path do %>
-                🐶
+                🐶 Dogs
               <% end %>
             </li>
             <li class="divider"></li>
@@ -36,7 +36,7 @@
       <% end %>
     </ul>
 
-    
+
     <h1 class='text-center'>
       <%= link_to root_path do %>
         🐾 dOGE MEETINGS
@@ -44,8 +44,14 @@
     </h1>
   </div>
   <% flash.each do |name, message| %>
-    <div class="flash jumbotron">
-      <%= name.capitalize %>: <%= message %>
-    </div>
+    <% if flash[:success] %>
+      <div class="flash text-center bg-success">
+        <%= message %>
+      </div>
+    <% else %>
+      <div class="flash text-center bg-danger">
+        <%= message %>
+      </div>
+    <% end %>
   <% end %>
 </header>
