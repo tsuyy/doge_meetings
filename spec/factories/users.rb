@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user do
-  	name "Doge"
+  	name { Faker::Name.name }
   	city "San Francisco"
   end
 end
