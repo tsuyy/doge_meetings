@@ -103,8 +103,16 @@ img.dog-modal {
   width: 65%;
 }
 
-.img-responsive {
-  width: 100%
+.carousel {
+  width: 800px;
+  left: 12vw;
+}
+
+.about {
+  max-width: 800px;
+  margin-left: 12vw;
+  box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
+  background-color: white;
 }
 
 .modal-content {
@@ -126,4 +134,11 @@ img.dog-modal {
 
 form.button_to {
   display: inline;
+}
+
+.wrapper {
+  -moz-column-width: 14em;
+  -webkit-column-width: 14em;
+  -moz-column-gap: 3em;
+  -webkit-column-gap: 3em;
 }
