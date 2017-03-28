@@ -1,2 +1,34 @@
 <footer>
+
+<div class='container'>
+  <div>
+    <ul>
+      <% if logged_in? %>
+        <li>
+          <%= link_to root_path do %>
+            🐾 Home
+          <% end %>
+        </li>
+        <li>
+          <%= link_to current_user do %>
+            <i class="fa fa-paw" aria-hidden="true"></i> Profile
+          <% end %>
+        </li>
+        <li>
+          <%= link_to dogs_path do %>
+            🐶 Dogs
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <%= link_to "Check out the source code here!", "https://github.com/tsuyy/doge_meetings" %>
+  </div>
+  <div>
+    &#169 2017
+  </div>
+</div>
+
 </footer>
