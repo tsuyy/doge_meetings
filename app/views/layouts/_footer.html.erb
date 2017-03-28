@@ -2,8 +2,8 @@
 
 <div class='container'>
   <div>
-    <ul>
-      <% if logged_in? %>
+    <% if logged_in? %>
+      <ul>
         <li>
           <%= link_to root_path do %>
             🐾 Home
@@ -19,12 +19,16 @@
             🐶 Dogs
           <% end %>
         </li>
-      <% end %>
-    </ul>
+      </ul>
+    <% else %>
+      <div class='before-sign-in'>
+        <%= link_to "Log in", login_path %>  |  <%= link_to "Sign up", new_user_path %>
+      </div>
+    <% end %>
   </div>
 
   <div>
-    <%= link_to "Check out the source code here!", "https://github.com/tsuyy/doge_meetings" %>
+    <%= link_to 'Check out the source code here!', 'https://github.com/tsuyy/doge_meetings' %>
   </div>
   <div>
     &#169 2017
