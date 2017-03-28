@@ -43,7 +43,7 @@ ul.pull-left {
   margin-top: 25px;
 }
 
-.list-group-item:hover, .btn-default:hover {
+.list-group-item:hover, .btn-default:hover, .dropdown-menu > li > a:hover {
   background-color: #75efde;
   color: #fff!important;
   border-color: #75efde;
