@@ -16,7 +16,7 @@ class PlaydatesController < ApplicationController
     if current_user.id != params[:user_id].to_i
       redirect_to root_path
     end
-    @playdate = Playdate.new(user_id: params[:user_id])
+    @playdate = Playdate.new(user_id: params[:user_id], date: Time.now.strftime("%d/%m/%Y %H:%M"))
   end
 
   # GET /playdates/1/edit
@@ -30,10 +30,14 @@ class PlaydatesController < ApplicationController
     end
     playdate = playdate_params
     playdate[:user_id] = params[:user_id]
-    @playdate = Playdate.create(playdate)
-    Invite.create(user_id: params[:user_id], playdate_id: @playdate.id, status: 1)
-    redirect_to user_path(@playdate.user)
-
+    @playdate = Playdate.new(playdate)
+    if @playdate.save
+      Invite.create(user_id: params[:user_id], playdate_id: @playdate.id, status: 1)
+      redirect_to user_path(current_user)
+    else
+      flash[:error] = "Not Valid Playdate Info"
+      redirect_to user_path(current_user)
+    end
   end
 
   # PATCH/PUT /playdates/1
@@ -45,6 +49,7 @@ class PlaydatesController < ApplicationController
   # DELETE /playdates/1
   def destroy
     @playdate.destroy
+    flash[:success] = "Playdate gone!"
     redirect_to user_path(@playdate.user)
   end
 

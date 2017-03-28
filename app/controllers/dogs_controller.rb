@@ -19,8 +19,13 @@ class DogsController < ApplicationController
     end
     dog = dog_params
     dog[:user_id] = params[:user_id]
-    @dog = Dog.create(dog)
-    redirect_to user_path(@dog.user)
+    @dog = Dog.new(dog)
+    if @dog.save
+      redirect_to user_path(current_user)
+    else
+      flash[:error] = "Wrong dog parameters"
+      redirect_to user_path(current_user)
+    end
   end
 
   def edit
@@ -33,6 +38,7 @@ class DogsController < ApplicationController
 
   def destroy
     @dog.destroy
+    flash[:success] = "Oh no! What happened to your dog?"
     redirect_to user_path(@dog.user)
   end
 

@@ -29,8 +29,15 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.create(user_params)
-    redirect_to users_path
+    @user = User.new(user_params)
+    if @user.save
+      log_in(@user)
+      flash[:success] = "User created successfully!"
+      redirect_to user_path(@user)
+    else
+      flash[:error] = "Not Valid Account Info"
+      redirect_to root_path
+    end
   end
 
   # PATCH/PUT /users/1
@@ -43,10 +50,22 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
+    flash[:success] = "User deleted successfully"
     redirect_to root_path
   end
 
   private
+    # handbuilt presence
+    # def check_params
+    #   ans = user_params.clone
+    #   user_params.each do |param|
+    #     next if param == "avatar"
+    #     flash[:error] = "Can't Have Only Spaces in Form"
+    #     ans = nil if user_params[param].delete(" ").empty?
+    #   end
+    #   redirect_to root_path if ans == nil
+    # end
+
     def is_current_user
       @user = User.find_by_id(params[:id])
       if @user != current_user

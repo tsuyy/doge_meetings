@@ -28,10 +28,8 @@ $(document).on('turbolinks:load', function() {
       playdate.toggle(300);
     }
   })
-  // $('.sublinks.invites li').on('click', function(){
-  //   var id = this.id;
-  //     $('.playdate').hide()
-  //     $(`.${id}`).toggle(500);
-  // })
+  setTimeout(function(){
+    $('.flash').slideToggle(300)
+  },4000)
 
 })
