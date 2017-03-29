@@ -1,12 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.describe User do
-  describe "::new" do
-  	it "initializes a new user" do
-      user = User.new
-      expect(user).to be_a(User)
-    end
-  end
   it 'is valid when required attributes are present' do
     expect(FactoryGirl.build(:user)).to be_valid
   end
