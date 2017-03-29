@@ -20,7 +20,7 @@
  @import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Barrio|Josefin+Sans');
 
 body {
-  background-image: url(bg.png);
+  background-image: url('/assets/bg.png');
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -36,6 +36,10 @@ body {
   font-size: 9vh;
   margin-left: 50px;
   text-align: center;
+}
+
+.footer {
+  margin-top: 25vh;
 }
 
 ul.pull-left {
@@ -67,6 +71,11 @@ p.josefin {
   font-size: 20px;
   font-family: 'Josefin Sans', sans-serif;
   line-height: 40px;
+  padding-top: 20px;
+}
+
+p span {
+  font-size: 30px;
 }
 
 div.before-sign-in, .btn, .dropdown-menu {
@@ -93,8 +102,8 @@ div.before-sign-in, .btn, .dropdown-menu {
   box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
   padding: 24px 24px 75px 24px;
   background: white;
-  max-width: 350px;
-  min-width: 350px;
+  max-width: 320px;
+  min-width: 320px;
 }
 
 .form-control {
