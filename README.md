@@ -3,19 +3,19 @@
 An easy way to set up playdates for your dog(s)!
 
 ## Installation
-
-ImageMagick
-
-seeddump
-
-rspec
-factorygirl
-launchy
-capybara
-
+### Ruby Gems Used
+* bcrypt
+* bootstrap-sass
+* font-awesome-sass
+* paperclip
+* rspec
+* byebug
+* guard-rspec
+* spring
+* factorygirl
+* rails-controller-testing
 
 ## Technologies Used
-
 * HTML
 * CSS
 * JavaScript
@@ -35,3 +35,9 @@ capybara
 * Deployment instructions
 
 * ...
+
+## Contributors
+[Kody Lawton](https://github.com/klawton1)
+[Regelyn Cacho](https://github.com/rccacho)
+[Yvonne Tsu](https://github.com/tsuyy)
+[Kevin Kuo](https://github.com/kkuo57)
