@@ -51,6 +51,7 @@ Go to localhost:3000 to play around with the app!
 * Notification for invitations and rsvp status
 * Password confirmation
 * Add loading gif
+* Users will be able to upload multiple images for dogs 
 
 ## Contributors
 [Kody Lawton (100% made from concentrate)](https://github.com/klawton1) <br />
