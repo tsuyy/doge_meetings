@@ -37,7 +37,7 @@
     <% if current_user?(@user) %>
       <div class="panel list-group">
       <li class="list-group-item my-dogs">
-        My Dogs
+        My Dogs <span class='pull-right'> 🐶</span>
       </li>
         <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"> Playdates <i class="fa fa-paw pull-right" aria-hidden="true"></i></li>
         <div id="sm" class="sublinks collapse playdates">
@@ -67,5 +67,5 @@
       <%= render 'dogs/show' %>
     </div>
   </div>
-  
+
 </div>
