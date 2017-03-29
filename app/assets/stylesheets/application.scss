@@ -120,13 +120,6 @@ img.dog-modal {
   left: 12vw;
 }
 
-.about {
-  max-width: 800px;
-  margin-left: 12vw;
-  box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
-  background-color: white;
-}
-
 .modal-content {
   width: 565px;
   text-align: center;
@@ -140,11 +133,11 @@ img.dog-modal {
 
 .block {
   background-color: white;
-  width: 80%;
+  width: 90%;
   box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
   text-align: center;
-  padding-top: 30px;
-  margin: 30px;
+  padding-top: 15px;
+  margin-left: 30px;
 }
 
 form.button_to {
