@@ -73,4 +73,19 @@ RSpec.describe UsersController, :type => :controller do
     end 
   end
 
+  describe 'DELETE #destroy' do
+    it "deletes the contact" do
+      user = FactoryGirl.create(:user)
+      expect{
+        delete :destroy, id: user.id      
+      }.to change(User,:count).by(-1)
+    end
+      
+    it "redirects to login page" do
+      user = FactoryGirl.create(:user)
+      delete :destroy, id: user.id
+      response.should redirect_to login_path
+    end
+  end
+
 end
