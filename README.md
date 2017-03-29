@@ -4,9 +4,11 @@ An easy way to set up playdates for your dog(s)!
 
 ## Installation
 Install ImageMagick
+
 `brew install imagemagick`
 
 Install all the Ruby Gems used
+
 `bundle`
 
 ### Tools Used
@@ -49,9 +51,8 @@ Go to localhost:3000 to play around with the app!
 * Implement search bar or filter for dogs index page
 * Add a location model for easier search for dog parks
 * Notification for invitations and rsvp status
-* Password confirmation
 * Add loading gif
-* Users will be able to upload multiple images for dogs 
+* Users will be able to upload multiple images for dogs
 
 ## Contributors
 [Kody Lawton (100% made from concentrate)](https://github.com/klawton1) <br />
