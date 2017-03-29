@@ -104,6 +104,12 @@ div.before-sign-in, .btn, .dropdown-menu {
   background: white;
   max-width: 320px;
   min-width: 320px;
+
+}
+
+.profile-img {
+  max-width: 350px;
+  min-width: 350px;
 }
 
 .form-control {
@@ -133,7 +139,7 @@ img.dog-modal {
 
 .block {
   background-color: white;
-  width: 90%;
+  width: 95%;
   box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
   text-align: center;
   padding-top: 15px;
