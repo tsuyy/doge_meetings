@@ -20,7 +20,7 @@
           <li class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Invite to a Playdate</li>
           <div id="sl" class="sublinks collapse invites">
            <% current_user.playdates.each do |playdate|%>
-            <% if Invite.where(user_id: @user.id, playdate_id: playdate.id).empty?%>
+            <% if Invite.where(user_id: @user.id).where( playdate_id: playdate.id).empty?%>
               <%= link_to new_invite_path(user_id: "#{@user.id}", playdate_id: "#{playdate.id}", status: "0"), method: "post", controller: "invites", action: "create"  do %>
                 <%= content_tag :li, class: ["list-group-item"] do %>
                   <%= playdate.title %>
@@ -36,7 +36,10 @@
 
     <% if current_user?(@user) %>
       <div class="panel list-group">
-        <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"><%= @user.name %>'s Playdates <i class="fa fa-paw pull-right" aria-hidden="true"></i></li>
+      <li class="list-group-item my-dogs">
+        My Dogs
+      </li>
+        <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"> Playdates <i class="fa fa-paw pull-right" aria-hidden="true"></i></li>
         <div id="sm" class="sublinks collapse playdates">
           <% @user.invites.where(status: 1).each do |invite| %>
             <%= content_tag :li, invite.playdate.title, id: "#{invite.playdate.id}", class: ["list-group-item"] %>
