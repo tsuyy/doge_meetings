@@ -18,7 +18,6 @@ Install all the Ruby Gems used
 * font-awesome-sass
 * paperclip
 * rspec
-* byebug
 * guard-rspec
 * spring
 * factorygirl
@@ -43,6 +42,12 @@ Go to localhost:3000 to play around with the app!
 * jQuery
 * Bootstrap
 * PostgreSQL
+
+## Future Features
+* More mobile friendly design
+* Streamline the process of inviting users to playdates
+* Implement search bar or filter for dogs index page
+* Add a location model for easier search for dog parks
 
 ## Contributors
 [Kody Lawton (100% made from concentrate)](https://github.com/klawton1)
