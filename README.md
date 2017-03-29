@@ -48,9 +48,10 @@ Go to localhost:3000 to play around with the app!
 * Streamline the process of inviting users to playdates
 * Implement search bar or filter for dogs index page
 * Add a location model for easier search for dog parks
+* Notification for invitations and rsvp status
 
 ## Contributors
-[Kody Lawton (100% made from concentrate)](https://github.com/klawton1)
-[Regelyn Cacho](https://github.com/rccacho)
-[Yvonne Tsu](https://github.com/tsuyy)
-[Kevin Kuo](https://github.com/kkuo57)
+[Kody Lawton (100% made from concentrate)](https://github.com/klawton1) <br />
+[Regelyn Cacho](https://github.com/rccacho) <br />
+[Yvonne Tsu](https://github.com/tsuyy) <br />
+[Kevin Kuo](https://github.com/kkuo57) <br />
