@@ -74,7 +74,7 @@ RSpec.describe UsersController, :type => :controller do
   end
 
   describe 'DELETE #destroy' do
-    it "deletes the contact" do
+    it "deletes the user" do
       user = FactoryGirl.create(:user)
       expect{
         delete :destroy, id: user.id      
@@ -88,4 +88,51 @@ RSpec.describe UsersController, :type => :controller do
     end
   end
 
+  describe 'PUT #update' do
+    before :each do
+      user = FactoryGirl.create(:user, name: "Lawrence", city: "San Francisco", email: "a@b.com", password: "123")
+    end
+    
+    context "valid attributes" do
+      it "located the requested user" do
+        user = FactoryGirl.create(:user, name: "Lawrence", city: "San Francisco", email: "a@b.com", password: "123")
+        put :update, id: user.id, user: FactoryGirl.attributes_for(:user)
+        assigns(:user).should eq(user)      
+      end
+      it "changes user's attributes" do
+        user = FactoryGirl.create(:user, name: "Lawrence", city: "San Francisco", email: "a@b.com", password: "123")
+        put :update, id: user, 
+          user: FactoryGirl.attributes_for(:user, name: "Larry", city: "San Francisco", email: "a@b.com", password: "123")
+        user.reload
+        user.name.should eq("Larry")
+        user.city.should eq("San Francisco")
+      end
+      it "redirects to the updated user" do
+        user = FactoryGirl.create(:user, name: "Larry", city: "San Francisco", email: "a@b.com", password: "123")
+        put :update, id: user.id, user: FactoryGirl.attributes_for(:user)
+        response.should redirect_to user
+      end
+    end
+    
+    context "invalid attributes" do
+      it "locates the requested user" do
+        user = FactoryGirl.create(:user, name: "Lawrence", city: "San Francisco")
+        put :update, id: user.id, user: FactoryGirl.attributes_for(:invalid_user)
+        assigns(:user).should eq(user)      
+      end
+      it "does not change user's attributes" do
+        user = FactoryGirl.create(:user, name: "Lawrence", city: "San Francisco")
+        put :update, id: user, 
+          user: FactoryGirl.attributes_for(:user, name: "Larry", city: nil)
+        user.reload
+        user.name.should_not eq("Larry")
+        user.city.should eq("San Francisco")
+      end     
+      it "re-renders the edit method" do
+        user = FactoryGirl.create(:user, name: "Lawrence", city: "San Francisco")
+        put :update, id: user.id, user: FactoryGirl.attributes_for(:invalid_user)
+        response.should render_template :edit
+      end
+    end
+  end
 end
