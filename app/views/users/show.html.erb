@@ -39,7 +39,9 @@
       <li class="list-group-item my-dogs">
         My Dogs <span class='pull-right'> 🐶</span>
       </li>
-        <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"> Playdates <i class="fa fa-paw pull-right" aria-hidden="true"></i></li>
+        <li class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu"> Playdates
+          <i class="fa fa-paw pull-right" aria-hidden="true"></i>
+        </li>
         <div id="sm" class="sublinks collapse playdates">
           <% @user.invites.where(status: 1).each do |invite| %>
             <%= content_tag :li, invite.playdate.title, id: "#{invite.playdate.id}", class: ["list-group-item"] %>
@@ -53,7 +55,8 @@
         <i class="fa fa-envelope pull-right" aria-hidden="true"></i></li>
         <div id="sl" class="sublinks collapse invites">
          <% @user.invites.where(status: 0).each do |invite|%>
-          <%= content_tag :li, "Invite From: " + invite.playdate.user.name, class: ["list-group-item"], data: { toggle: "modal", target: "#invite#{invite.id}" } %>
+          <%= content_tag :li, "Invite From: " + invite.playdate.user.name,
+          class: ["list-group-item"], data: { toggle: "modal", target: "#invite#{invite.id}" } %>
          <% end %>
         </div>
       </div>

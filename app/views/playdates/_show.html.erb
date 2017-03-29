@@ -9,7 +9,7 @@
             <i class="fa fa-pencil-square-o pull-right" aria-hidden="true"></i>
           <% end %>
         <% end %>
-        
+
         <h2><%= invite.playdate.title %></h2><br>
 
         <strong>Host:</strong>
@@ -29,7 +29,9 @@
           .where(playdate_id: invite.playdate.id)
           .where('user_id != ?', current_user.id)
           .where(status: 1 ).each do |inv| %>
-          <li> <%= link_to inv.user.name, user_path(inv.user)%></li>
+          <ul class='list-unstyled'>
+            <li> <%= link_to inv.user.name, user_path(inv.user)%></li>
+          </ul>
         <% end %>
       <% end %>
     </p>
