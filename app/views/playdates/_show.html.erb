@@ -1,8 +1,7 @@
-<p id="notice"><%= notice %></p>
+<section>
 <% @user.invites.where(status: 1).each do |invite| %>
   <%= content_tag :div, class: ["#{invite.playdate.id}", "playdate", "col-xs-12 col-sm-12 col-md-7", 'block'] do %>
-    <iframe width="100%" height="350" frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/search?q=<%= invite.playdate.location %>&key=AIzaSyBmkOMQR7DSJ1IP7y6Bg3Uoxq4JeZH4MjM" allowfullscreen></iframe>
+    <iframe width="100%" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=<%= invite.playdate.location %>&key=AIzaSyBmkOMQR7DSJ1IP7y6Bg3Uoxq4JeZH4MjM" allowfullscreen></iframe>
     <p class='josefin'>
       <% if current_user?(@user) %>
         <% if current_user == invite.playdate.user %>
@@ -36,3 +35,4 @@
     </p>
   <% end %>
 <% end %>
+</section>

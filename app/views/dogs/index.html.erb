@@ -16,16 +16,14 @@
     <%= content_tag :div, class: ["modal", "fade"], id: "dog#{dog.id}", tabindex: "-1", role: "dialog" do %>
       <div class="modal-dialog modal-sm">
         <div class= "modal-content">
-          <div class='crop'>
           <%if dog.avatar.blank? %>
             <%= link_to image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal'), user_path(dog.user) %>
           <% else %>
             <%= link_to image_tag(dog.avatar.url(:medium), class: 'dog-modal'), user_path(dog.user) %>
           <% end %>
-        </div>
 
           <p class='josefin'>
-            Name: <%= dog.name %><br>
+            <%= dog.name %><br>
             Breed: <%= dog.breed %><br>
             <%= dog.sex %><br>
             Age: <%= dog.age %><br>
