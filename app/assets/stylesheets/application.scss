@@ -20,7 +20,7 @@
  @import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Barrio|Josefin+Sans');
 
 body {
-  background-image: url(bg.png);
+  background-image: url('/assets/bg.png');
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -67,6 +67,11 @@ p.josefin {
   font-size: 20px;
   font-family: 'Josefin Sans', sans-serif;
   line-height: 40px;
+  padding-top: 20px;
+}
+
+p span {
+  font-size: 30px;
 }
 
 div.before-sign-in, .btn, .dropdown-menu {
@@ -131,8 +136,11 @@ img.dog-modal {
 
 .block {
   background-color: white;
-  width: 350px;
+  width: 80%;
   box-shadow: 1px 5px 10px rgba(6, 2, 2, 0.26);
+  text-align: center;
+  padding-top: 30px;
+  margin: 30px;
 }
 
 form.button_to {

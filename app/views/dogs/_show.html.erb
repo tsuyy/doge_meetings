@@ -1,6 +1,6 @@
   <% @user.dogs.each do |dog| %>
   <section>
-    <%= content_tag :div, class: ["dog-modal"] do %>
+    <%= content_tag :div, class: ["dog-modal", "dogs"] do %>
       <%if dog.avatar.blank? %>
         <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
       <% else %>
@@ -25,7 +25,7 @@
             <% end %>
 
             <p class='josefin'>
-              <%= dog.name %><br>
+              <span><%= dog.name %></span><br>
               Breed: <%= dog.breed %><br>
               <%= dog.sex %><br>
               Age: <%= dog.age %><br>

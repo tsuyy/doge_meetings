@@ -17,19 +17,20 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
+  setTimeout(function(){
+    $('.flash').slideToggle(300)
+  },4000)
   $('.sublinks.playdates li').on('click', function(){
     var id = this.id;
     var playdate = $(`.playdate.${id}`)
-    if (playdate.css("display") == "block") {
-      playdate.toggle(300);
-    }
-    else{
+    if (playdate.css("display") != "block") {
+      $('.dogs').hide()
       $('.playdate').hide()
       playdate.toggle(300);
     }
   })
-  setTimeout(function(){
-    $('.flash').slideToggle(300)
-  },4000)
-
+  $('.my-dogs').on('click', function(){
+    $('.playdate').hide()
+    $('.dogs').show(300)
+  })
 })
