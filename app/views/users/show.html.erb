@@ -1,9 +1,9 @@
 <div class='row'>
   <div class='col-xs-12 col-sm-4 col-md-4'>
     <%if @user.avatar.blank? %>
-      <%= image_tag('http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png', class: 'polaroid') %>
+      <%= image_tag('http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png', class: 'polaroid profile-img') %>
     <% else %>
-      <%= image_tag(@user.avatar.url(:medium), class: 'polaroid') %>
+      <%= image_tag(@user.avatar.url(:medium), class: 'polaroid profile-img') %>
     <% end %>
 
     <p class='name'>
