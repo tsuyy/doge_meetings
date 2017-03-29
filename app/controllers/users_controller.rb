@@ -30,21 +30,38 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-    if @user.save
-      log_in(@user)
-      flash[:success] = "User created successfully!"
-      redirect_to user_path(@user)
+    if params[:user][:password_confirmation] != user_params[:password]
+      flash[:error] = "Passwords don't match"
+      redirect_to new_user_path
+    elsif user_params[:password].empty?
+      flash[:error] = "Please Enter a Password"
+      redirect_to new_user_path
     else
-      flash[:error] = "Not Valid Account Info"
-      redirect_to root_path
+      if @user.save
+        log_in(@user)
+        flash[:success] = "User created successfully!"
+        redirect_to user_path(@user)
+      else
+        flash[:error] = "Not Valid Account Info"
+        redirect_to root_path
+      end
     end
   end
 
   # PATCH/PUT /users/1
   def update
     @user = User.find_by_id(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user)
+    if params[:user][:password_confirmation] != user_params[:password]
+      flash[:error] = "Passwords don't match"
+      redirect_to edit_user_path(@user)
+    elsif user_params[:password].empty?
+      flash[:error] = "Please Enter a Password"
+      redirect_to edit_user_path(@user)
+    else
+      @user.update(user_params)
+      flash[:success] = "Updated"
+      redirect_to user_path(@user)
+    end
   end
 
   # DELETE /users/1

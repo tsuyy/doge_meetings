@@ -28,9 +28,13 @@
 
     <%= f.label :password %>
     <% if @user.password_digest.nil? %>
-      <%= f.text_field :password, class: 'form-control', required: true, maxlength: 25 %><br>
+      <%= f.password_field :password, class: 'form-control', required: true, maxlength: 25 %>
+      <%= f.label "Password Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control', required: true, maxlength: 25 %><br>
     <% else %>
-      <%= f.text_field :password, class: 'form-control', maxlength: 25 %><br>
+      <%= f.password_field :password, class: 'form-control', maxlength: 25 %>
+       <%= f.label "Password Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control', maxlength: 25 %><br>
     <% end %>
 
     <%= f.submit 'OK', class: "btn btn-default" %>
