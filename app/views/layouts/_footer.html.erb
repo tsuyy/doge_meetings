@@ -1,38 +1,9 @@
-<footer>
+<div class='footer'>
 
-<div class='container'>
-  <div>
-    <% if logged_in? %>
-      <ul>
-        <li>
-          <%= link_to root_path do %>
-            🐾 Home
-          <% end %>
-        </li>
-        <li>
-          <%= link_to current_user do %>
-            <i class="fa fa-paw" aria-hidden="true"></i> Profile
-          <% end %>
-        </li>
-        <li>
-          <%= link_to dogs_path do %>
-            🐶 Dogs
-          <% end %>
-        </li>
-      </ul>
-    <% else %>
-      <div class='before-sign-in'>
-        <%= link_to "Log in", login_path %>  |  <%= link_to "Sign up", new_user_path %>
-      </div>
+  <div class='text-center'>
+    <%= link_to 'https://github.com/tsuyy/doge_meetings'  do %>
+      <i class="fa fa-code" aria-hidden="true"></i> KKRY
     <% end %>
-  </div>
-
-  <div>
-    <%= link_to 'Check out the source code here!', 'https://github.com/tsuyy/doge_meetings' %>
-  </div>
-  <div>
     &#169 2017
   </div>
 </div>
-
-</footer>

@@ -17,7 +17,7 @@
       <div class="modal-dialog modal-sm">
         <div class= "modal-content">
           <%if dog.avatar.blank? %>
-            <%= link_to image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal'), user_path(dog.user) %>
+            <%= image_tag('https://i.imgflip.com/4l3w9.jpg', class: 'dog-modal') %>
           <% else %>
             <%= link_to image_tag(dog.avatar.url(:medium), class: 'dog-modal'), user_path(dog.user) %>
           <% end %>
@@ -42,8 +42,9 @@
             Weight: <%= dog.weight %> lb <br>
             Temperament: <%= dog.temperament %><br>
           </p>
-
+          <%= link_to "View Owner Profile", user_path(dog.user), class: 'btn btn-default' %>
         </div>
+
       </div>
     <% end %>
   <% end %>
