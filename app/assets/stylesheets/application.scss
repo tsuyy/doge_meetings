@@ -26,7 +26,7 @@ body {
   background-attachment: fixed;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 19px;
-
+  /* empty line here? why? */
 }
 
 .header, h1 {
@@ -55,7 +55,7 @@ ul.pull-left {
   border-color: #75efde;
 }
 
-
+/* 2 lines. why? */
 p.name {
   max-width: 350px;
   text-align: center;
@@ -74,6 +74,7 @@ p.josefin {
   padding-top: 20px;
 }
 
+/* this seems like a super general selector for a super specific thing. */
 p span {
   font-size: 30px;
 }
@@ -162,8 +163,8 @@ form.button_to {
   display: block;
   margin: 0 auto;
   width: 300px;
-
 }
+
 .bg-danger {
   background-color: rgba(255, 84, 102, 0.38);
 }

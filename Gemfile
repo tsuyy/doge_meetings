@@ -6,6 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 
+# Lots of these don't necessarily get used; by the end of project, dependencies should be accurate.
+# Also this should describe all of the dependencies, including ImageMagick
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use postgresql as the database for Active Record

@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome back, #{user.name}!"
     else
       flash.now[:danger] = 'Invalid email/password combination' # Displays flash messages on rendered pages
+      # I would expect this to redirect, not to render as a result of a POST request.
       render 'new'
     end
   end

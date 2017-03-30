@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get     '/login',    to: 'sessions#new'
   post    '/login',    to: 'sessions#create'
+  # i would also make this work for get
   delete  '/logout',   to: 'sessions#destroy'
 
   match "*path", to: 'application#page_not_found', via: :all
