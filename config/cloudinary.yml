@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ho7vby8du
+  api_key: '198179328254726'
+  api_secret: R99Ql3lYr0DBEG3X2xYHck0myFg
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: ho7vby8du
+  api_key: '198179328254726'
+  api_secret: R99Ql3lYr0DBEG3X2xYHck0myFg
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: ho7vby8du
+  api_key: '198179328254726'
+  api_secret: R99Ql3lYr0DBEG3X2xYHck0myFg
+  enhance_image_tag: true
+  static_image_support: false
