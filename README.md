@@ -1,5 +1,6 @@
 # 🐾 Doge Meetings!
 
+<!-- more info about who would use this and why. also heroku link? -->
 An easy way to set up playdates for your dog(s)!
 
 ## Installation
@@ -11,6 +12,7 @@ Install all the Ruby Gems used
 
 `bundle`
 
+<!-- these could be links -->
 ### Tools Used
 * imagemagick
 
@@ -26,6 +28,7 @@ Install all the Ruby Gems used
 * rails-controller-testing
 
 ## Usage
+<!-- this doesn't render on multiple lines like you have it written here :( -->
 Make sure all the migrations are up.
 `rails db:migrate:status`
 If not, then please run
@@ -55,6 +58,7 @@ Go to localhost:3000 to play around with the app!
 * Users will be able to upload multiple images for dogs
 
 ## Demo
+<!-- more pictures would be good -->
 ![](http://g.recordit.co/QhZbDxY3F9.gif)
 demo account: k@k.com <br />
 password: 123

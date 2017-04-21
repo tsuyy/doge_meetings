@@ -5,10 +5,12 @@ class Dog < ApplicationRecord
         :path    => ':id/:style/:filename'
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates :name, presence: true
+  # could validate a lot more
   validates :age, presence: true
   validates_inclusion_of :sex, :in => ["Male", "Female"]
   validates_inclusion_of :vaccinated, :in => [true, false]
   validates_inclusion_of :neutered, :in => [true, false]
   validates :breed, presence: true
+  # could validate a lot more about weight
   validates :weight, presence: true
 end

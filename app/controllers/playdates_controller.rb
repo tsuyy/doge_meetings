@@ -13,6 +13,9 @@ class PlaydatesController < ApplicationController
 
   # GET /playdates/new
   def new
+    # you probably can just always create playdates for the current user.
+    # you probably also want the before_action to check that they're logged in.
+    # this should also be a hook.
     if current_user.id != params[:user_id].to_i
       redirect_to root_path
     end
@@ -25,6 +28,8 @@ class PlaydatesController < ApplicationController
 
   # POST /playdates
   def create
+    # hooks please. ESPECIALLY because this is the same as what's in new.
+    # and the same comments as new.
     if current_user.id != params[:user_id].to_i
       redirect_to root_path
     end
@@ -33,6 +38,7 @@ class PlaydatesController < ApplicationController
     @playdate = Playdate.new(playdate)
     if @playdate.save
       Invite.create(user_id: params[:user_id], playdate_id: @playdate.id, status: 1)
+      # your if and else both end with this line. move to after your if/else.
       redirect_to user_path(current_user)
     else
       flash[:error] = "Not Valid Playdate Info"
@@ -43,6 +49,7 @@ class PlaydatesController < ApplicationController
   # PATCH/PUT /playdates/1
   def update
     @playdate.update(playdate_params)
+    # you're not checking for errors at all here.
     redirect_to user_path(@playdate.user)
   end
 

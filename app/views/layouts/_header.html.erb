@@ -44,6 +44,8 @@
     </h1>
   </div>
   <% flash.each do |name, message| %>
+    <!-- you're wrapping a lot of similar-looking stuff in your if-else.
+    You could just if-else that class. -->
     <% if flash[:success] %>
       <div class="flash text-center bg-success">
         <%= message %>

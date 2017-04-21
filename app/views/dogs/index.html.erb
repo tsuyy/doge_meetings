@@ -9,10 +9,16 @@
           <%= image_tag(dog.avatar.url(:large), class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
         <% end %>
         <p class='name'><%= dog.name %></p>
+
     <% end %>
+      <!-- WHY is the section inside the content tag but not the end of it.
+      your html is invalid now
+      :(
+      -->
       </section>
 
 
+    <!-- it's good to know what things like tabindex do when you put them in your code! -->
     <%= content_tag :div, class: ["modal", "fade"], id: "dog#{dog.id}", tabindex: "-1", role: "dialog" do %>
       <div class="modal-dialog modal-sm">
         <div class= "modal-content">
@@ -22,11 +28,12 @@
             <%= image_tag(dog.avatar.url(:medium), class: 'dog-modal') %>
           <% end %>
 
+          <!-- use a more semantic class name that's not dependent on the specific font. -->
           <p class='josefin'>
             <span><%= dog.name %></span><br>
             Breed: <%= dog.breed %><br>
             <%= dog.sex %><br>
-            Age: <%= dog.age %><br>
+            <span class="age">Age: <%= dog.age %></span><br>
             Vaccinated:
             <% if dog.vaccinated == true %>
               <i class="fa fa-check" aria-hidden="true"></i>
@@ -42,6 +49,7 @@
             Weight: <%= dog.weight %> lb <br>
             Temperament: <%= dog.temperament %><br>
           </p>
+          <!-- this link should only show if you're logged in. -->
           <%= link_to "View Owner Profile", user_path(dog.user), class: 'btn btn-default' %>
         </div>
 

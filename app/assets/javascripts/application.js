@@ -17,6 +17,7 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
+  // missing all the semicolons. this is javascript now.
   setTimeout(function(){
     $('.flash').slideToggle(300)
   },4000)

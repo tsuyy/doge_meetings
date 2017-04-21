@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user,        only: [:show, :edit, :update, :destroy]
-  before_action :is_current_user, only: [       :edit, :update, :destroy]
+  # The first line of is_current_user does the same thing as set_user. you should never need to use both on a single route.
+  before_action :set_user,        only: [:show]
+  before_action :is_current_user, only: [:edit, :update, :destroy]
 
   def home
   end
+
+  # DEAD CODE :(
+  # GET RID OF THE CODE FOR NOT REAL ROUTES.
 
   # GET /users
   def index
@@ -29,6 +33,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
+    # logically, creating @user belongs after these if/elsif checks.
     @user = User.new(user_params)
     if params[:user][:password_confirmation] != user_params[:password]
       flash[:error] = "Passwords don't match"
@@ -37,12 +42,15 @@ class UsersController < ApplicationController
       flash[:error] = "Please Enter a Password"
       redirect_to new_user_path
     else
+      # here.
       if @user.save
         log_in(@user)
         flash[:success] = "User created successfully!"
         redirect_to user_path(@user)
       else
         flash[:error] = "Not Valid Account Info"
+        # more helpful error message, and take them back to create account w/ their information still filled in.
+        # could use @saved_user.
         redirect_to root_path
       end
     end
@@ -50,7 +58,9 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
+    # i SURE HOPE that this is what set_user the hook is doing already. so this line is unnecessary.
     @user = User.find_by_id(params[:id])
+    # wouldn't it be nice if you abstracted this into some private helper method
     if params[:user][:password_confirmation] != user_params[:password]
       flash[:error] = "Passwords don't match"
       redirect_to edit_user_path(@user)
@@ -59,6 +69,7 @@ class UsersController < ApplicationController
       redirect_to edit_user_path(@user)
     else
       @user.update(user_params)
+      # you're not checking if that actually worked, you're just saying "success"
       flash[:success] = "Updated"
       redirect_to user_path(@user)
     end
@@ -72,6 +83,8 @@ class UsersController < ApplicationController
   end
 
   private
+    # commented out code... GET RID OF IT.
+
     # handbuilt presence
     # def check_params
     #   ans = user_params.clone
@@ -92,6 +105,8 @@ class UsersController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_user
+      # not safe if you put in a user id that's nonexistent.
+      # which will give you the sad default rails 404.
       @user = User.find(params[:id])
     end
 

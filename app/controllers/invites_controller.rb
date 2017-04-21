@@ -1,6 +1,8 @@
 class InvitesController < ApplicationController
   def create
     invite = Invite.new(invite_params)
+    # this doesn't actually check if you should be allowed to invite that user to that playdate.
+    # it will allow any logged-in user to invite any other user to any playdate.
     if logged_in? && invite.save
       flash[:success] = "You've invited #{invite.user.name.capitalize} to a playdate!"
       redirect_to user_path(current_user)
@@ -8,7 +10,7 @@ class InvitesController < ApplicationController
       flash[:error] = "Bad Invite"
       redirect_to root_path
     end
-        
+
   end
 
   def update
@@ -17,6 +19,7 @@ class InvitesController < ApplicationController
       flash[:error] = "No Can Do"
       redirect_to root_path
     else
+      # you don't check that this update worked.
       invite.update(invite_params)
       redirect_to user_path(current_user)
     end
