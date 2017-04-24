@@ -19,7 +19,8 @@
 $(document).on('turbolinks:load', function() {
   setTimeout(function(){
     $('.flash').slideToggle(300)
-  },4000)
+  },4000);
+
   $('.sublinks.playdates li').on('click', function(){
     var id = this.id;
     var playdate = $(`.playdate.${id}`)
@@ -28,9 +29,22 @@ $(document).on('turbolinks:load', function() {
       $('.playdate').hide()
       playdate.toggle(300);
     }
-  })
+  });
+
   $('.my-dogs').on('click', function(){
     $('.playdate').hide()
     $('.dogs').show(300)
+  });
+  // close modal when after click to edit
+  $('.dog-edit').on('click', function(){
+    $('.modal-backdrop').remove();
+    $('body').removeClass('modal-open');
+    $(this).closest('.modal').hide();
+  });
+  // close modal when after click to see owner
+  $('.dog-owner').on('click', function(){
+    $('.modal-backdrop').remove();
+    $('body').removeClass('modal-open');
+    $(this).closest('.modal').hide();
   })
-})
+});
