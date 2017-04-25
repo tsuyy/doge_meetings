@@ -54,7 +54,7 @@ Go to localhost:3000 to play around with the app!
 * Users will be able to upload multiple images for dogs
 
 ## Demo
-![]()
+![](http://g.recordit.co/IIw8nscj88.gif)
 demo account: k@k.com <br />
 password: 123
 
