@@ -9,8 +9,8 @@
           <%= image_tag(dog.avatar.url(:large), class: 'dog-modal polaroid', data: {toggle: "modal", target: "#dog#{dog.id}"}) %>
         <% end %>
         <p class='name'><%= dog.name %></p>
-    <% end %>
       </section>
+    <% end %>
 
 
     <%= content_tag :div, class: ["modal", "fade"], id: "dog#{dog.id}", tabindex: "-1", role: "dialog" do %>
