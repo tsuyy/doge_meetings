@@ -3,37 +3,36 @@
 An easy way to set up playdates for your dog(s)!
 
 ## Installation
-Install ImageMagick
-
+Install ImageMagick<br/>
 `brew install imagemagick`
 
-Install all the Ruby Gems used
-
+Install all the Ruby Gems used<br/>
 `bundle`
 
 ### Tools Used
-* imagemagick
+* [imagemagick](https://www.npmjs.com/package/imagemagick)
 
 ### Ruby Gems Used
-* bcrypt
-* bootstrap-sass
-* font-awesome-sass
-* paperclip
-* rspec
-* guard-rspec
-* spring
-* factorygirl
-* rails-controller-testing
+* [bcrypt](https://gist.github.com/thebucknerlife/10090014)
+* [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
+* [font-awesome-sass](ttps://github.com/FortAwesome/font-awesome-sass)
+* [paperclip](https://github.com/thoughtbot/paperclip)
+* [paperclip-cloudinary](https://github.com/GoGoCarl/paperclip-cloudinary)
+* [rspec](https://github.com/rspec/rspec)
+* [guard-rspec](https://github.com/guard/guard-rspec)
+* [spring](https://github.com/rails/spring)
+* [factorygirl](https://github.com/thoughtbot/factory_girl)
+* [rails-controller-testing](https://github.com/rails/rails-controller-testing)
 
 ## Usage
-Make sure all the migrations are up.
-`rails db:migrate:status`
-If not, then please run
-`rails db:migrate`
-Now let's seed the database
-`rails db:seed`
-Set up the server
-`rails s`
+Make sure all the migrations are up.<br/>
+`rails db:migrate:status`<br/>
+If not, then please run<br/>
+`rails db:migrate`<br/>
+Now let's seed the database<br/>
+`rails db:seed`<br/>
+Set up the server<br/>
+`rails s`<br/>
 Go to localhost:3000 to play around with the app!
 
 ## Technologies Used
@@ -55,7 +54,7 @@ Go to localhost:3000 to play around with the app!
 * Users will be able to upload multiple images for dogs
 
 ## Demo
-![](http://g.recordit.co/QhZbDxY3F9.gif)
+![]()
 demo account: k@k.com <br />
 password: 123
 
