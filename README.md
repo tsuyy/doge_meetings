@@ -60,7 +60,7 @@ demo account: k@k.com <br />
 password: 123
 
 ## Contributors
-[Kody Lawton (100% made from concentrate)](https://github.com/klawton1) <br />
+[Kody Lawton](https://github.com/klawton1) <br />
 [Regelyn Cacho](https://github.com/rccacho) <br />
 [Yvonne Tsu](https://github.com/tsuyy) <br />
 [Kevin Kuo](https://github.com/kkuo57) <br />
